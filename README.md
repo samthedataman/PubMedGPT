@@ -1,5 +1,3 @@
-Sure, here's a README.md file for your Chronic Conditions application. Please modify it as needed to reflect the specifics of your application.
-
 # Chronic Conditions App
 The Chronic Conditions application is a tool designed to streamline the process of summarizing PubMed abstracts related to various chronic conditions. The summaries are organized by chronic condition and month/year for easy accessibility and user-friendly comprehension. 
 
