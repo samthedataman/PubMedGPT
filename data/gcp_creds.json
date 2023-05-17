@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "airflow-test-371320",
+  "private_key_id": "dad1bdc01d6fd69cf65603526f4c03c37959c049",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFzsiz6GGRgqOj\nQPm587WEqZtnySKiqxgEm0O8ygyKF/TYKXPMW41CLxmqieOXWH7zvUoNtZ6wgMOL\nAKeviYWW/KDdB9zvCs+L+znSWCeQo4gQkAb4hPs5jzNd0Y26k6H3s1nNceAaRgEW\n7riZyfNg89QGXbGGlGcpxjAlYS303udi+dR1QPfBo59As7zwCGDaMvvNvDu7wpRI\n4r3Q3GjtFQOC2GZUtYFi8UXwCfQHD3TXvZAAgRhSfj3B4fhcsl4xnVVJJy6MgG5q\nzk1Lb+5LhavujcdK3FNf5r8aku+E8bjKzqyLoeXfmg0dVX4fvJ4rig2Dd0GbU7Md\n9Nt3XOiHAgMBAAECggEABDlFvmWyflBOwIdf7bhiwnhBVKLVOzgVfHwjlL/o1aKz\npvv3m/j70OixHRvVpIoOfT42UGy84Br0NYKvWQ6XTGGpWsmLzlMbmqP5Qyfx83FO\n7KMrHLbUbq21RluEFUfeSeTmOX5sKDcEyX4ucXgAFAHX9RsQR2lwJWDRYOvXPd/F\n2dcG5ABXFbWQ8pQAKXlf6Cv9uTgvfGYcv4bVbMDzik3lN7+yQhB/dDyuwsf/2UW+\nZGVMJrIiR7yJJ2oYq/Ht/yP3R15w6PCl9oZR8tf0VI03EllYDlwUYbRj1PbYAk/P\nieyX2ba2GfDZEPfKFFUdn4LZwLNoGhOXTc9XGcGhxQKBgQDyjh9B2OTHnkV2f79M\nYQT3ddHhzy7ggVbK3Y5hIBnIQ29wBafi7ws+ljgJ1bITD0uHwZwLgyPPT61vjCHC\nwP/93rN3FZFktFVmydYIZOQfiWRAU9v+D2k53wXhfCex1PWB4RG9hu8GzSEf6Xm0\npULtQRPCbdG9uXQ+H/FN5dqEJQKBgQDQxbE/a4t7WMH+aGw9ZEfaFTyvjCbiXNDI\nIjNkNy4+DbRrpLMEaVaF8gcixdHFuLI2S/YFUbjw5lTa8YAAyvURRahPW6DgU6Zr\nEGXVPQg2sifpkKNhw7FI159EFH4wo9UiTMECebn39uN/CXv1xH0NlKtgyJ8JY4UE\nOs3LyjpkOwKBgQCTaZjJlh4Ey8X/rMgAjX5NPwfdquMcgr7S8DAWC0JgGcviUy2j\nmBBHa1iHcZ6WQtdunFZQENV0q0IG5y2lhVKPYgfEOhFxGMBGhihUVaznFcMd7Vlo\nYMlc6JRUY/Zj9791vengO9+NTKHzGRxkk4PHWaO+qKuuGMXy88rdwvI5GQKBgG1G\nPLtEUFK0p33BLH6Jwa4dlZERG7059bH7bMjUtSiXxcrd/zGc7UPY5fFGd8E1JlqT\nMeeg2duFw/6Bj41ariFnQ2yeOjuQrTe28oZFlsoCQC/ZnBrs8ht9eQiKbW6KImH8\nqL3h9vwaRwNUdIS0Xvw/x+A1wkCIzbPkD5nOdPfHAoGAZ8qnKcIWR+lc3P84PEpm\nhZs5ocE7jBYmccQlqiBXuObdZFMdC/KWFEnmkL9ABCEC1pouFg3KW1WrIUwGmUf1\nUkrqCIZLI0bZanRb5slamU1XhVCWJS1SDFmvU+iQ7LXE1wPLNz8GtZTs8IeFFSJx\n1g61yyuHa+RKqMrhNlL1jOI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pubmedaccount@airflow-test-371320.iam.gserviceaccount.com",
+  "client_id": "100210928535427508831",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pubmedaccount%40airflow-test-371320.iam.gserviceaccount.com"
+}
