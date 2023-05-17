@@ -20,7 +20,6 @@ from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
 # Set your OpenAI API key
-os.environ["OPENAI_API_KEY"] = "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"
 
 
 # load_dotenv()
@@ -60,12 +59,27 @@ def get_data():
     key_path = "/Users/samsavage/NHIB Scraper/airflow-test-371320-dad1bdc01d6f.json"
     creds = Credentials.from_service_account_file(key_path)
     client = bigquery.Client(credentials=creds, project=project_name)
-    query = f""" SELECT 
-                CAST(date_ as date) as Year_Month,
-                ChronicCondition,
-                PMID,
-                REGEXP_REPLACE(GPT3_SUMMARY, r'The conclusion (from|of) this .* is that', '') as GPT3_SUMMARY FROM `airflow-test-371320.BACKFILL.BACKFILL_2023_GPT3`
-                order by 1 desc """
+    query = f"""WITH ranked_data AS (
+    SELECT 
+        CAST(date_ AS DATE) AS Year_Month,
+        date_uploaded_new,
+        ChronicCondition,
+        PMID,
+        CONCAT(UPPER(SUBSTR(GPT3_SUMMARY, 1, 1)), SUBSTR(GPT3_SUMMARY, 2)) AS GPT3_SUMMARY,
+        ROW_NUMBER() OVER (PARTITION BY ChronicCondition,CAST(date_ AS DATE) ORDER BY date_uploaded_new DESC) as row_num
+    FROM `airflow-test-371320.BACKFILL.BACKFILL_2023_GPT3`
+    WHERE CAST(date_ AS DATE) IS NOT NULL
+)
+
+SELECT 
+    Year_Month,
+    date_uploaded_new,
+    ChronicCondition,
+    PMID,
+    GPT3_SUMMARY
+FROM ranked_data
+WHERE row_num = 1
+ """
     query_job = client.query(query)
     results = query_job.result().to_dataframe()
 
