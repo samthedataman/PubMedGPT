@@ -160,9 +160,6 @@ def summarize_text(text, condition):
 def go():
 
     df = get_clean_data()
-    print(df)
-    print(len(df))
-
 
     # df["f0_"] = df["DOI"].apply(get_total_citation_count)
     # print(df["f0_"])
