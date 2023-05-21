@@ -13,22 +13,60 @@ def extract_significance_metrics_and_symptoms(text):
     sentences = [sent.text for sent in doc.sents]
     significance_metrics_and_symptoms = []
     for sentence in sentences:
-        if re.search(r'p\s*(<|<=)\s*0.05', sentence):
-            metric = re.search(r'\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))', sentence)
-            symptom = re.search(r'\b(\w+)\b(?=\s*(symptoms|symptom))', sentence)
-            trend = re.search(r'\b(increased|decreased|improved)\b', sentence)
+        if re.search(r"p\s*(<|<=)\s*0.05", sentence):
+            metric = re.search(
+                r"\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))",
+                sentence,
+            )
+            symptom = re.search(r"\b(\w+)\b(?=\s*(symptoms|symptom))", sentence)
+            trend = re.search(r"\b(increased|decreased|improved)\b", sentence)
             if metric and symptom:
-                significance_metrics_and_symptoms.append((symptom.group(0), metric.group(0), 'Positive', 'Statistically Significant', trend.group(0) if trend else None))
+                significance_metrics_and_symptoms.append(
+                    (
+                        symptom.group(0),
+                        metric.group(0),
+                        "Positive",
+                        "Statistically Significant",
+                        trend.group(0) if trend else None,
+                    )
+                )
             else:
-                significance_metrics_and_symptoms.append((None, metric.group(0), 'Positive', 'Statistically Significant' if metric else None, trend.group(0) if trend else None))
-        elif re.search(r'p\s*(>|>=)\s*0.05', sentence):
-            metric = re.search(r'\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))', sentence)
-            symptom = re.search(r'\b(\w+)\b(?=\s*(symptoms|symptom))', sentence)
-            trend = re.search(r'\b(increased|decreased|improved)\b', sentence)
+                significance_metrics_and_symptoms.append(
+                    (
+                        None,
+                        metric.group(0),
+                        "Positive",
+                        "Statistically Significant" if metric else None,
+                        trend.group(0) if trend else None,
+                    )
+                )
+        elif re.search(r"p\s*(>|>=)\s*0.05", sentence):
+            metric = re.search(
+                r"\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))",
+                sentence,
+            )
+            symptom = re.search(r"\b(\w+)\b(?=\s*(symptoms|symptom))", sentence)
+            trend = re.search(r"\b(increased|decreased|improved)\b", sentence)
             if metric and symptom:
-                significance_metrics_and_symptoms.append((symptom.group(0), metric.group(0), 'Negative', 'Not Statistically Significant', trend.group(0) if trend else None))
+                significance_metrics_and_symptoms.append(
+                    (
+                        symptom.group(0),
+                        metric.group(0),
+                        "Negative",
+                        "Not Statistically Significant",
+                        trend.group(0) if trend else None,
+                    )
+                )
             else:
-                significance_metrics_and_symptoms.append((None, metric.group(0), 'Negative', 'Not Statistically Significant' if metric else None, trend.group(0) if trend else None))
+                significance_metrics_and_symptoms.append(
+                    (
+                        None,
+                        metric.group(0),
+                        "Negative",
+                        "Not Statistically Significant" if metric else None,
+                        trend.group(0) if trend else None,
+                    )
+                )
     return significance_metrics_and_symptoms
 
 
@@ -41,7 +79,7 @@ def get_results_and_predictions(condition, treatment):
     pubmed = PubMed(tool="MyTool", email="samuel.savage@uconn.edu")
     condition = condition
     treatment = treatment
-    
+
     query = f'({condition}[Title/Abstract] AND {treatment}[Title/Abstract] AND ("Randomized Controlled Trial"[Publication Type] OR "Double-Blind Method"[MeSH Terms] OR "Clinical Trial"[Publication Type]))'
 
     results = pubmed.query(query=query, max_results=10)
@@ -121,7 +159,9 @@ def get_results_and_predictions(condition, treatment):
 
     # Remove the 'ANSWER: ' prefix and parse strings into python objects
     df["MetaGPT"] = df["MetaGPT"].str.replace("ANSWER: ", "", regex=False).str.strip()
-    df['SignificanceMetricsSymptomsAndTrends'] = (df['conclusions'] + ' ' + df['results']).apply(extract_significance_metrics_and_symptoms)
+    df["SignificanceMetricsSymptomsAndTrends"] = (
+        df["conclusions"] + " " + df["results"]
+    ).apply(extract_significance_metrics_and_symptoms)
 
     df.to_csv(f"pre_cleaned_{treatment}_{condition}.csv")
     try:

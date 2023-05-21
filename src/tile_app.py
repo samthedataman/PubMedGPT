@@ -1,4 +1,3 @@
-
 # Generate grid of metrics
 import streamlit as st
 import random
@@ -27,12 +26,12 @@ from langchain.llms import OpenAI
 import os
 from difflib import SequenceMatcher
 import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from stuffthatworks.StuffThatWorksETL import run_jobs
 from streamlitfunctions import *
 import pandas as pd
 import plotly.express as px
-
 
 
 def main():
@@ -145,7 +144,7 @@ def main():
     drug_list = sorted(drug_list, key=len)
 
     if not drug_list:
-        st.error('No treatments found.')
+        st.error("No treatments found.")
         return
 
     # List of potential medical emojis
@@ -153,27 +152,34 @@ def main():
 
     # Pad the drug_list
     max_len = max(len(drug) for drug in drug_list)
-    drug_list = [f"{random.choice(emoji_list)} {drug.ljust(max_len)}" for drug in drug_list]
+    drug_list = [
+        f"{random.choice(emoji_list)} {drug.ljust(max_len)}" for drug in drug_list
+    ]
 
     # Define the number of rows and columns based on the drug_list
     num_drugs = len(drug_list)
     metrics_per_row = min(4, num_drugs)  # Set the maximum columns per row
-    num_containers = (num_drugs // metrics_per_row) + (num_drugs % metrics_per_row > 0)  # Round up
+    num_containers = (num_drugs // metrics_per_row) + (
+        num_drugs % metrics_per_row > 0
+    )  # Round up
 
     drug_index = 0
     for container_index in range(num_containers):
         with st.container():
             cols = st.columns(metrics_per_row)
             for metric_index in range(metrics_per_row):
-                if drug_index < num_drugs:  # Check if there are still drugs left to display
+                if (
+                    drug_index < num_drugs
+                ):  # Check if there are still drugs left to display
                     with cols[metric_index]:
                         with st.expander(drug_list[drug_index], expanded=True):
                             st.write()
-                            st.metric(label="", value="1000 RCT", delta="40% pvalue<.05")
+                            st.metric(
+                                label="", value="1000 RCT", delta="40% pvalue<.05"
+                            )
                             with st.expander("What does this treat?", expanded=False):
                                 st.write("Hello world")
                         drug_index += 1
 
+
 main()
-
-

@@ -19,7 +19,6 @@ from selenium.webdriver.chrome.options import Options
 
 
 def get_treatments(condition):
-
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
@@ -93,7 +92,6 @@ def get_treatments(condition):
     pattern = r"^#(\d+)(.*?)(\d+)\s+reports(?:\s*(\d+)%?)?$"
 
     for tile in tiles:
-
         match = re.match(pattern, tile.get_attribute("textContent"))
 
         if match:
@@ -350,7 +348,6 @@ def insert_dataframe_into_table(df):
 
 
 def push_treatment_data_to_gbq():
-
     results = get_conditions()
 
     results = list(set(results))

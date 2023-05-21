@@ -13,6 +13,7 @@ from google.oauth2.service_account import Credentials
 
 # load_dotenv()
 
+
 def get_current_month_start():
     today = datetime.date.today()
     current_month_start = datetime.date(today.year, today.month, 1)
@@ -212,7 +213,6 @@ options = st.selectbox(
 text_search = st.text_input("Search by keyword", value="")
 
 
-
 m1 = df["GPT3_SUMMARY"].str.contains(text_search)
 df = df[m1]
 
@@ -272,7 +272,6 @@ st.markdown(f"""## Summurized Discoveres for {options} include:""")
 
 
 if len(filtered_df) > 0:
-
     for summary, month, url in zip(
         filtered_df["GPT3_SUMMARY"],
         filtered_df["Year_Month"],
