@@ -1,23 +1,12 @@
 # from dotenv import load_dotenv
-import matplotlib.pyplot as plt
-import plotly.express as px
 import datetime
-from dateutil import parser
-from dateutil.relativedelta import relativedelta
-from langchain.document_loaders import DataFrameLoader
+
+import pandas as pd
+import plotly.express as px
 import streamlit as st
-from datetime import date
+from dateutil.relativedelta import relativedelta
 from google.cloud import bigquery
 from google.oauth2.service_account import Credentials
-import pandas as pd
-import os
-import pandas_gbq
-import streamlit as st
-import openai
-from langchain.document_loaders import CSVLoader
-from langchain.indexes import VectorstoreIndexCreator
-from langchain.chains import RetrievalQA
-from langchain.llms import OpenAI
 
 # Set your OpenAI API key
 
@@ -38,7 +27,6 @@ def get_month_start(months_ago):
     past_date = today - relativedelta(months=months_ago)
     month_start = datetime.date(past_date.year, past_date.month, 1)
     month_start = month_start.strftime("%Y-%m-%d")
-    # date_object = datetime.datetime.strptime(month_start, "%Y-%m-%d").date()
     return month_start
 
 
@@ -56,10 +44,11 @@ def get_data():
     dataset_name = "BACKFILL"
     table_name = "BACKFILL_2023_GPT3"
     table_id = f"{dataset_name}.{table_name}"
+    # TODO: make this a local path!
     key_path = "/Users/samsavage/NHIB Scraper/airflow-test-371320-dad1bdc01d6f.json"
     creds = Credentials.from_service_account_file(key_path)
     client = bigquery.Client(credentials=creds, project=project_name)
-    query = f"""WITH ranked_data AS (
+    query = """WITH ranked_data AS (
     SELECT 
         CAST(date_ AS DATE) AS Year_Month,
         date_uploaded_new,
