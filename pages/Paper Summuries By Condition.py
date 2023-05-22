@@ -1,9 +1,3 @@
-
-# Generate grid of metrics
-import streamlit as st
-import random
-import streamlit_nested_layout
-
 # from dotenv import load_dotenv
 import matplotlib.pyplot as plt
 import plotly.express as px
@@ -27,12 +21,12 @@ from langchain.llms import OpenAI
 import os
 from difflib import SequenceMatcher
 import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from stuffthatworks.StuffThatWorksETL import run_jobs
 from streamlitfunctions import *
 import pandas as pd
 import plotly.express as px
-
 
 
 def main():
@@ -71,6 +65,20 @@ def main():
     st.markdown("""<style></style>""", unsafe_allow_html=True)
 
     st.title("Learn About New Chronic Condition Research with AI")
+
+    # Create slider widget
+    min_date = df["Year_Month"].min()
+    max_date = df["Year_Month"].max()
+
+    selected_date = st.slider(
+        "Select a date:",
+        min_value=min_date,
+        max_value=max_date,
+        value=(min_date, max_date),
+        format="YYYY/MM",
+    )
+
+    date1, date2 = selected_date
 
     # Create an empty list to store the fuzzy matched words
     matched_words = []
@@ -134,46 +142,90 @@ def main():
         index=11,
     )
 
+    # filter conditions on chronic condition
+    filtered_df = df[
+        (df["ChronicCondition"].isin([options]))
+        & (df["Year_Month"] >= date1)
+        & (df["Year_Month"] <= date2)
+    ]
+
+    chart_df = filtered_df.copy()
+
+    chart_df["Year_Month_Names"] = pd.to_datetime(chart_df["Year_Month"]).dt.strftime(
+        "%B"
+    )
+
+    timeline_df = (
+        chart_df.groupby(
+            ["Year_Month", "Year_Month_Names", "ChronicCondition", "GPT3_SUMMARY"]
+        )
+        .agg({"AggregatedPapers": "sum"})
+        .reset_index()
+        .sort_values(by="Year_Month", ascending=True)
+    )
+
+    # Extract year and month from the date column
+    # create stacked bar chart
+    st.markdown(
+        f"""### Symptoms and Studies over Time for </span><span class='condition_title'>{options}</span></div>""",
+        unsafe_allow_html=True,
+    )
+    col1, col2 = st.columns(2)
+    with col1:
+        create_chart2(symptoms_df[(symptoms_df["PubMedConditions"] == options)])
+
+    with col2:
+        create_chart1(timeline_df, options)
+
     treatments = treatments_df[
         (treatments_df["TreatmentType"] == "Beneficial")
         & (treatments_df["PubMedConditions"] == options)
     ]["treatments"]
+    # (treatments_df['rankings'] == '1'))]['treatments']
 
     drug_list = [
         drug.strip() for treatment in treatments for drug in treatment.split(",")
     ]
-    drug_list = sorted(drug_list, key=len)
 
-    if not drug_list:
-        st.error('No treatments found.')
-        return
+    st.markdown(
+        f"""### PubMed Articles in descending order by publishing date for {options}"""
+    )
+    # st.markdown(f"""### Summurized Discoveres for {options} include:""")
 
-    # List of potential medical emojis
-    emoji_list = ["💊", "🩺", "💉", "🌡️", "🧪", "🦠", "🔬", "🧬"]
+    if len(filtered_df) > 0:
+        for summary, month, url in zip(
+            filtered_df["GPT3_SUMMARY"],
+            filtered_df["Year_Month"],
+            filtered_df["URL_combined"],
+        ):
+            # Split the combined URLs and make them clickable
+            urls = url.split(", ")
+            n_urls = len(urls)
+            clickable_urls = ", ".join(
+                [
+                    f"<a href='{u}' target='_blank'>source {i+1}</a>"
+                    for i, u in enumerate(urls)
+                ]
+            )
 
-    # Pad the drug_list
-    max_len = max(len(drug) for drug in drug_list)
-    drug_list = [f"{random.choice(emoji_list)} {drug.ljust(max_len)}" for drug in drug_list]
+            col1, col2 = st.columns([7, 1])
 
-    # Define the number of rows and columns based on the drug_list
-    num_drugs = len(drug_list)
-    metrics_per_row = min(4, num_drugs)  # Set the maximum columns per row
-    num_containers = (num_drugs // metrics_per_row) + (num_drugs % metrics_per_row > 0)  # Round up
+            with col1:
+                st.markdown(
+                    f"""<div><b>{month}</b></div><div class='blurb'>{summary}</div>""",
+                    unsafe_allow_html=True,
+                )
+            with col2:
+                st.markdown(
+                    f"""</span><span class='condition_title'>Links: {clickable_urls}</span></div>""",
+                    unsafe_allow_html=True,
+                )
+    else:
+        st.write(
+            f"No studies exist at this time. Please try a different filtering option."
+        )
+    # <div class='item'><span class='date'>
+    # Generate GPT-3 bot response
 
-    drug_index = 0
-    for container_index in range(num_containers):
-        with st.container():
-            cols = st.columns(metrics_per_row)
-            for metric_index in range(metrics_per_row):
-                if drug_index < num_drugs:  # Check if there are still drugs left to display
-                    with cols[metric_index]:
-                        with st.expander(drug_list[drug_index], expanded=True):
-                            st.write()
-                            st.metric(label="", value="1000 RCT", delta="40% pvalue<.05")
-                            with st.expander("What does this treat?", expanded=False):
-                                st.write("Hello world")
-                        drug_index += 1
 
 main()
-
-

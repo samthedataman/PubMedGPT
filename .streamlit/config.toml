@@ -1,10 +1,10 @@
 [theme]
-base = "light"
-primaryColor = "#3e8ed0"
-secondaryBackgroundColor = "#0e1024"
-backgroundColor = "#1e3769"
-textColor = "#f7f8fa"
-font = "Poppins"
+primaryColor="#FF4B4B"
+backgroundColor="#0E1117"
+secondaryBackgroundColor="#262730"
+textColor="#FAFAFA"
+secondaryTextColor="#FFBA08"
+font="sans serif"
 
 [custom_css]
 url = "https://fonts.googleapis.com/css2?family=Poppins&display=swap"
