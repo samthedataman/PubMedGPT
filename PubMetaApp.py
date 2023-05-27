@@ -250,12 +250,13 @@ def main():
     # User Interface
     with st.container():
         st.markdown(centered_content, unsafe_allow_html=True)  # Apply the custom CSS
+
         st.header("⚕️*PubMeta*⚕️")
+
         st.subheader("**A Rapid Meta-Analysis Generation Tool for Patients**")
         st.markdown(
             """Assisting patients around the world uncover and compare proven treatment options in a single webpage"""
         )
-
         with st.form("search_form"):
             col1, col2, col3 = st.columns(
                 [4, 0.5, 1.5]

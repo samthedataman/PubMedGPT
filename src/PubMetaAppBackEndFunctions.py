@@ -14,6 +14,45 @@ from google.oauth2.service_account import Credentials
 from google.oauth2 import service_account
 import openai
 import ast
+from concurrent.futures import ThreadPoolExecutor
+import torch
+from transformers import AutoTokenizer, AutoModelForTokenClassification
+
+
+def classify_medical_text(input_text):
+    # Load pre-trained tokenizer and model
+    tokenizer = AutoTokenizer.from_pretrained("d4data/biomedical-ner-all")
+    model = AutoModelForTokenClassification.from_pretrained("d4data/biomedical-ner-all")
+
+    # Preprocess the input text
+    tokenized_text = tokenizer.encode(input_text, truncation=True, padding=True)
+    input_ids = torch.tensor([tokenized_text])
+
+    # Perform text classification
+    with torch.no_grad():
+        outputs = model(input_ids)
+
+    # Extract predicted labels
+    predicted_labels = torch.argmax(outputs.logits, dim=2)
+    predicted_labels = predicted_labels.squeeze().tolist()
+
+    # Create a reverse label map from label id to label string
+    reverse_label_map = {
+        i: label for i, label in enumerate(model.config.id2label.values())
+    }
+
+    # Apply label map to the prediction
+    predicted_labels_text = [
+        reverse_label_map[i] for i in predicted_labels if reverse_label_map[i] != "O"
+    ]
+
+    # Decode the tokens to get the original text (useful for checking and debugging)
+    original_text = tokenizer.decode(tokenized_text)
+
+    print("Predicted labels:", predicted_labels_text)
+    print("Original medical text:", original_text)
+
+    return predicted_labels_text
 
 
 def stringify_columns(df):
@@ -32,96 +71,21 @@ def stringify_columns(df):
     return df
 
 
-def get_condition_treatments_for_pubmed_from_STW():
+def get_condition_treatments_for_pubmed_from_STW(query):
     # Instantiate a client object using credentials
     project_name = "airflow-test-371320"
     key_path = "/Users/samsavage/PythonProjects/PubMedGPT/data/gcp_creds.json"
     creds = Credentials.from_service_account_file(key_path)
     client = bigquery.Client(credentials=creds, project=project_name)
-    query = f""" SELECT 
-    conditions AS Disease,
-    REPLACE(
-        REPLACE(SPLIT(treatments, ',')[OFFSET(0)], '|', ''), 
-        CONCAT(
-            CASE WHEN treatments LIKE '%Physical activity%' THEN 'Physical activity' ELSE '' END,
-            CASE WHEN treatments LIKE '%Dietary change%' THEN 'Dietary change' ELSE '' END,
-            CASE WHEN treatments LIKE '%Lifestyle change%' THEN 'Lifestyle change' ELSE '' END,
-            CASE WHEN treatments LIKE '%Alternative therapy%' THEN 'Alternative therapy' ELSE '' END,
-            CASE WHEN treatments LIKE '%Non-surgical procedure%' THEN 'Non-surgical procedure' ELSE '' END,
-            CASE WHEN treatments LIKE '%Psychological therapy%' THEN 'Psychological therapy' ELSE '' END,
-            CASE WHEN treatments LIKE '%Home remedies%' THEN 'Home remedies' ELSE '' END,
-            CASE WHEN treatments LIKE '%Herbal drug / herb%' THEN 'Herbal drug / herb' ELSE '' END,
-                            CASE WHEN treatments LIKE '%(Unspecified)Surgical procedure %' THEN '(Unspecified)Surgical procedure' ELSE '' END,
-                CASE WHEN treatments LIKE '%(Unspecified)Vitamins & minerals %' THEN '(Unspecified)Vitamins & minerals' ELSE '' END,
-            CASE WHEN treatments LIKE '%(Unspecified) %' THEN 'Unspecified' ELSE '' END,
-            CASE WHEN treatments LIKE '%Massage therapies%' THEN 'Massage therapies' ELSE '' END,
-            CASE WHEN treatments LIKE '%Drug%' THEN 'Drug' ELSE '' END,
-            CASE WHEN treatments LIKE '%Coping tools and strategies%' THEN 'Coping tools and strategies' ELSE '' END
-            
-        ),
-        ''
-    ) AS Treatment,
-    CONCAT(
-        conditions, "|",
-        REPLACE(
-            REPLACE(SPLIT(treatments, ',')[OFFSET(0)], '|', ''), 
-            CONCAT(
-                CASE WHEN treatments LIKE '%Physical activity%' THEN 'Physical activity' ELSE '' END,
-                CASE WHEN treatments LIKE '%Dietary change%' THEN 'Dietary change' ELSE '' END,
-                CASE WHEN treatments LIKE '%Lifestyle change%' THEN 'Lifestyle change' ELSE '' END,
-                CASE WHEN treatments LIKE '%Alternative therapy%' THEN 'Alternative therapy' ELSE '' END,
-                CASE WHEN treatments LIKE '%Non-surgical procedure%' THEN 'Non-surgical procedure' ELSE '' END,
-                CASE WHEN treatments LIKE '%Psychological therapy%' THEN 'Psychological therapy' ELSE '' END,
-                CASE WHEN treatments LIKE '%Home remedies%' THEN 'Home remedies' ELSE '' END,
-                CASE WHEN treatments LIKE '%Herbal drug / herb%' THEN 'Herbal drug / herb' ELSE '' END,
-                CASE WHEN treatments LIKE '%(Unspecified)Surgical procedure %' THEN '(Unspecified)Surgical procedure' ELSE '' END,
-                CASE WHEN treatments LIKE '%(Unspecified)Vitamins & minerals %' THEN '(Unspecified)Vitamins & minerals' ELSE '' END,
-                CASE WHEN treatments LIKE '%(Unspecified) %' THEN 'Unspecified' ELSE '' END,
-                CASE WHEN treatments LIKE '% (Unspecified) %' THEN 'Unspecified' ELSE '' END,
-                        case WHEN treatments LIKE '%( Unspecified)%' THEN 'Unspecified' ELSE '' END,
-                     case WHEN treatments LIKE '%(Unspecified )%' THEN 'Unspecified' ELSE '' END,
-                    case WHEN treatments LIKE '%( Unspecified )%' THEN 'Unspecified' ELSE '' END,
-                case WHEN treatments LIKE '%(Unspecified)%' THEN 'Unspecified' ELSE '' END,
-                CASE WHEN treatments LIKE '%Massage therapies%' THEN 'Massage therapies' ELSE '' END,
-                CASE WHEN treatments LIKE '%Drug%' THEN 'Drug' ELSE '' END,
-                CASE WHEN treatments LIKE '%Coping tools and strategies%' THEN 'Coping tools and strategies' ELSE '' END
-            ),
-            ''
-        )
-    ) AS DiseaseTreatmentKey,
-        CASE 
-        WHEN treatments LIKE '%Physical activity%' THEN 'Physical activity'
-        WHEN treatments LIKE '%Dietary change%' THEN 'Dietary change'
-        WHEN treatments LIKE '%Lifestyle change%' THEN 'Lifestyle change'
-        WHEN treatments LIKE '%Alternative therapy%' THEN 'Alternative therapy'
-        WHEN treatments LIKE '%Non-surgical procedure%' THEN 'Non-surgical procedure'
-        WHEN treatments LIKE '%Psychological therapy%' THEN 'Psychological therapy'
-        WHEN treatments LIKE '%Home remedies%' THEN 'Home remedies'
-        WHEN treatments LIKE '%Herbal drug / herb%' THEN 'Herbal drug / herb'
-        WHEN treatments LIKE '%Massage therapies%' THEN 'Massage therapies'
-        WHEN treatments LIKE '%Drug%' THEN 'Drug'
-        WHEN treatments LIKE '%Coping tools and strategies%' THEN 'Coping tools and strategies'
-        WHEN treatments LIKE '%(Unspecified)Surgical procedure %' THEN '(Unspecified)Surgical procedure'
-        WHEN treatments LIKE '%(Unspecified)Vitamins & minerals %' THEN '(Unspecified)Vitamins & minerals'
-        WHEN treatments LIKE '%Unspecified%' THEN 'Unspecified'
-        WHEN treatments LIKE '%( Unspecified)%' THEN 'Unspecified'
-        WHEN treatments LIKE '%(Unspecified )%' THEN 'Unspecified'
-        WHEN treatments LIKE '%( Unspecified )%' THEN 'Unspecified'
-                WHEN treatments LIKE '%(Unspecified)%' THEN 'Unspecified'
-        ELSE 'Other'
-    END AS TreatmentCategory,
-    rankings AS DiseaseTreatmentRank,
-    num_reports AS DiseaseTreatmentNumReports
-FROM 
-    airflow-test-371320.DEVL.STUFF_THAT_WORKS_TREATMENTS_DEV
-WHERE 
-    conditions IS NOT NULL;
-
-                """
-
+    query = query
     query_job = client.query(query)
     results = query_job.result().to_dataframe()
     DiseaseTreatments = [d for d in results["DiseaseTreatmentKey"].unique()]
+
+    # Saving to JSON
+    with open("DiseaseTreatments.json", "w") as f:
+        json.dump(DiseaseTreatments, f)
+
     return DiseaseTreatments
 
 
@@ -136,7 +100,7 @@ def handle_list_objects(series):
 def upload_to_bq(df):
     project_name = "airflow-test-371320"
     dataset_name = "PubMeta"
-    table_id = f"{dataset_name}.PubMedWrapperDuck"
+    table_id = f"{dataset_name}.ArticlesM1CHIPa"
     credentials = service_account.Credentials.from_service_account_file(
         "/Users/samsavage/PythonProjects/PubMedGPT/data/gcp_creds.json"
     )
@@ -158,7 +122,6 @@ def update_dicts(article_dicts):
             pmid = pmid_search.group()
             article_dict["ArticlePmid"] = pmid
             article_dict["ArticleLink"] = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}"
-
         # Add 'CitationCounts' key to the dict
         citation_count = 0  # Default to 0 if we can't get a count
         doi = article_dict.get("doi", "")
@@ -170,8 +133,6 @@ def update_dicts(article_dicts):
                 # If there's an error getting the citation count, we'll just ignore it.
                 pass
         article_dict["CitationCounts"] = citation_count
-    return article_dicts
-
     return article_dicts
 
 
@@ -188,7 +149,7 @@ def get_ai_generated_data(df):
                     Task: Return 6 labels for each paper
 
                     1) Study Objective OR Hypothesis
-                    2) Treatment efficacy for each indicator tested, only choose from these 3 options below:
+                    2) Treatment efficacy for each indicator tested, only choose from these 4 options below:
                     (Statistically significant high (context: if p value mentioned less than .05))
                     (Statistically significant middle (context: if p value mentioned less than .1))
                     (Statistically significant low (context: if p value mentioned less than .2))
@@ -233,8 +194,14 @@ def get_results_and_predictions(DiseaseTreatments):
     print(f"length of Dtreatment list is {len(DiseaseTreatments)}, scraping away..")
     dt_count = 0
     for item in DiseaseTreatments:
-        # Split the element into disease and treatment
-        disease, treatment = item.split("|")
+        try:
+            # Split the element into disease and treatment
+            disease, treatment = item.split("|")
+        except ValueError:
+            print(
+                f"Skipping item '{item}' because it can't be split into disease and treatment."
+            )
+            continue
 
         print(f"Scraping {disease} with {treatment}")
 
@@ -243,12 +210,12 @@ def get_results_and_predictions(DiseaseTreatments):
         treatment = treatment.strip()
 
         # Build the query
-        query = f'({disease}[Title/Abstract] AND {treatment}[Title/Abstract] AND ("Randomized Controlled Trial"[Publication Type] OR "Double-Blind Method"[MeSH Terms] OR "Clinical Trial"[Publication Type]))'
+        query = f"({disease}[Title/Abstract] AND {treatment}[Title/Abstract])"
         #
         pubmed = PubMed(tool="MyTool", email="samuel.savage@uconn.edu")
         my_api_key = "1f93c5a0c91e90f6c0d0fae4178c2e9ae309"
         pubmed.parameters.update({"api_key": my_api_key})
-        pubmed._rateLimit = 50
+        pubmed._rateLimit = 20
         # Execute the query
         try:
             results = pubmed.query(query=query, max_results=10000)
@@ -291,18 +258,22 @@ def get_results_and_predictions(DiseaseTreatments):
     return df
 
 
-def main():
-    # os.environ["OPENAI_API_KEY"] = "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"
+# def main():
+#     # os.environ["OPENAI_API_KEY"] = "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"
+#     # Step 1: Get condition treatments from STW
+#     DiseaseTreatments = get_condition_treatments_for_pubmed_from_STW(
+#         query="""SELECT *
+# FROM `airflow-test-371320.PubMeta.MasterSplinter`
+# WHERE TreatmentCategory IN ('Drug', 'Coping tools and strategies', 'Lifestyle change');
+# """
+#     )
+#     # Step 2: Get results and predictions
+#     get_results_and_predictions(DiseaseTreatments)
+#     print("Data upload process completed.")
 
-    # Step 1: Get condition treatments from STW
-    DiseaseTreatments = get_condition_treatments_for_pubmed_from_STW()
-    # Step 2: Get results and predictions
-    get_results_and_predictions(DiseaseTreatments)
-    print("Data upload process completed.")
 
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
 # from google.cloud import bigquery
@@ -339,66 +310,66 @@ if __name__ == "__main__":
 #     print("Data loaded to BigQuery")
 
 
-def extract_significance_metrics_and_symptoms(text):
-    doc = nlp(text)
-    sentences = [sent.text for sent in doc.sents]
-    significance_metrics_and_symptoms = []
-    for sentence in sentences:
-        if re.search(r"p\s*(<|<=)\s*0.05", sentence):
-            metric = re.search(
-                r"\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))",
-                sentence,
-            )
-            symptom = re.search(r"\b(\w+)\b(?=\s*(symptoms|symptom))", sentence)
-            trend = re.search(r"\b(increased|decreased|improved)\b", sentence)
-            if metric and symptom:
-                significance_metrics_and_symptoms.append(
-                    (
-                        symptom.group(0),
-                        metric.group(0),
-                        "Positive",
-                        "Statistically Significant",
-                        trend.group(0) if trend else None,
-                    )
-                )
-            else:
-                significance_metrics_and_symptoms.append(
-                    (
-                        None,
-                        metric.group(0),
-                        "Positive",
-                        "Statistically Significant" if metric else None,
-                        trend.group(0) if trend else None,
-                    )
-                )
-        elif re.search(r"p\s*(>|>=)\s*0.05", sentence):
-            metric = re.search(
-                r"\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))",
-                sentence,
-            )
-            symptom = re.search(r"\b(\w+)\b(?=\s*(symptoms|symptom))", sentence)
-            trend = re.search(r"\b(increased|decreased|improved)\b", sentence)
-            if metric and symptom:
-                significance_metrics_and_symptoms.append(
-                    (
-                        symptom.group(0),
-                        metric.group(0),
-                        "Negative",
-                        "Not Statistically Significant",
-                        trend.group(0) if trend else None,
-                    )
-                )
-            else:
-                significance_metrics_and_symptoms.append(
-                    (
-                        None,
-                        metric.group(0),
-                        "Negative",
-                        "Not Statistically Significant" if metric else None,
-                        trend.group(0) if trend else None,
-                    )
-                )
-    return significance_metrics_and_symptoms
+# def extract_significance_metrics_and_symptoms(text):
+#     doc = nlp(text)
+#     sentences = [sent.text for sent in doc.sents]
+#     significance_metrics_and_symptoms = []
+#     for sentence in sentences:
+#         if re.search(r"p\s*(<|<=)\s*0.05", sentence):
+#             metric = re.search(
+#                 r"\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))",
+#                 sentence,
+#             )
+#             symptom = re.search(r"\b(\w+)\b(?=\s*(symptoms|symptom))", sentence)
+#             trend = re.search(r"\b(increased|decreased|improved)\b", sentence)
+#             if metric and symptom:
+#                 significance_metrics_and_symptoms.append(
+#                     (
+#                         symptom.group(0),
+#                         metric.group(0),
+#                         "Positive",
+#                         "Statistically Significant",
+#                         trend.group(0) if trend else None,
+#                     )
+#                 )
+#             else:
+#                 significance_metrics_and_symptoms.append(
+#                     (
+#                         None,
+#                         metric.group(0),
+#                         "Positive",
+#                         "Statistically Significant" if metric else None,
+#                         trend.group(0) if trend else None,
+#                     )
+#                 )
+#         elif re.search(r"p\s*(>|>=)\s*0.05", sentence):
+#             metric = re.search(
+#                 r"\b(\w+)\b(?=\s*(had|showed|exhibited|revealed|demonstrated|indicated|suggested))",
+#                 sentence,
+#             )
+#             symptom = re.search(r"\b(\w+)\b(?=\s*(symptoms|symptom))", sentence)
+#             trend = re.search(r"\b(increased|decreased|improved)\b", sentence)
+#             if metric and symptom:
+#                 significance_metrics_and_symptoms.append(
+#                     (
+#                         symptom.group(0),
+#                         metric.group(0),
+#                         "Negative",
+#                         "Not Statistically Significant",
+#                         trend.group(0) if trend else None,
+#                     )
+#                 )
+#             else:
+#                 significance_metrics_and_symptoms.append(
+#                     (
+#                         None,
+#                         metric.group(0),
+#                         "Negative",
+#                         "Not Statistically Significant" if metric else None,
+#                         trend.group(0) if trend else None,
+#                     )
+#                 )
+#     return significance_metrics_and_symptoms
 
 
 #     pubmed = PubMed(tool="MyTool", email="samuel.savage@uconn.edu")

@@ -1,0 +1,567 @@
+,serialName,urlId,entityDisplayName,conditionState,type,color,cid,parentId,gid,available,matchType
+0,Condition,acne,Acne,public,Default,#e1efd3,1903,,,True,Condition
+1,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+2,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+3,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+4,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+5,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+6,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+7,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+8,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+9,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+10,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+11,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+12,Condition,pancreatitis,Pancreatitis,public,Default,#f3e4e1,1923,,,True,Condition
+13,Condition,adrenal-insufficiency,Adrenal Insufficiency,public,Default,#d7deea,2369,,,True,Condition
+14,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+15,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+16,Condition,ankylosing-spondylitis,Ankylosing Spondylitis,public,Default,#daeaf5,1913,,,True,Condition
+17,Condition,anorexia-nervosa,Anorexia Nervosa,public,Default,#dff6f7,2389,,,True,Condition
+18,Condition,anorexia-nervosa-restricting-type,Anorexia Nervosa Restricting Type,public,Default,#daf0f3,221959,2389.0,,True,Condition
+19,Condition,anorexia-nervosa-binge-eatingpurge-type,Anorexia Nervosa Binge-Eating/Purging Type,public,Default,#daf0f3,221958,2389.0,,True,Condition
+20,Condition,bulimia-nervosa,Bulimia Nervosa,public,Default,#d6e3da,2591,,,True,Condition
+21,Condition,social-anxiety,Social Anxiety ,public,Default,#daeaf5,2806,,,True,Condition
+22,Condition,gad-adults,Generalized Anxiety Disorder in Adults,public,Default,#f0d5d5,23288,22390.0,,True,Condition
+23,Condition,mixed-depressive-anxiety,Mixed Depressive and Anxiety Disorder,public,Default,#fef4d2,3280,,,True,Condition
+24,Condition,gad-teens,Generalized Anxiety Disorder in Teens,public,Default,#d8e6e8,23287,22390.0,,True,Condition
+25,Condition,gad-adults,Generalized Anxiety Disorder in Adults,public,Default,#f0d5d5,23288,22390.0,,True,Condition
+26,Condition,mixed-depressive-anxiety,Mixed Depressive and Anxiety Disorder,public,Default,#fef4d2,3280,,,True,Condition
+27,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+28,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+29,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+30,Condition,asthma,Asthma,public,Default,#daf0f3,1888,,,True,Condition
+31,Condition,asthma-in-adults,Asthma in Adults,public,Default,#daf0f3,225221,1888.0,,True,Condition
+32,Condition,asthma-in-seniors,Asthma in Seniors,public,Default,#daf0f3,225222,1888.0,,True,Condition
+33,Condition,asthma-in-teens,Asthma in Teens,public,Default,#daf0f3,225220,1888.0,,True,Condition
+34,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+35,Condition,asthma-in-infants-toddlers,Asthma in Infants & Toddlers,public,Default,#daf0f3,225218,1888.0,,True,Condition
+36,Condition,atopic-eczema,Atopic Dermatitis / Eczema,public,Default,#e5deed,1899,,,True,Condition
+37,Condition,atopic-dermatitis-in-adults,Atopic Dermatitis in Adults,public,Default,#e1efd3,225226,1899.0,,True,Condition
+38,Condition,atopic-dermatitis-in-teens,Atopic Dermatitis in Teens,public,Default,#e1efd3,225225,1899.0,,True,Condition
+39,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+40,Condition,atopic-dermatitis-in-seniors,Atopic Dermatitis in Seniors,public,Default,#e1efd3,225227,1899.0,,True,Condition
+41,Condition,atopic-dermatitis-in-infants-toddlers,Atopic Dermatitis in Infants & Toddlers,public,Default,#e1efd3,225223,1899.0,,True,Condition
+42,Condition,dyshidrotic-eczema,Dyshidrotic Eczema,public,Default,#ffe3c9,3002,,,True,Condition
+43,Condition,adhd-adults,ADHD Adults,public,Default,#d6e3da,22959,22379.0,,True,Condition
+44,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+45,Condition,autism-spectrum-disorder,Autism Spectrum Disorder,public,Default,#e1efd3,1819,,,True,Condition
+46,Condition,hsd,Hypermobility Spectrum Disorder (HSD),public,Default,#dee5ce,23078,,,True,Condition
+47,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+48,Condition,asd-level-1,ASD Level 1,public,Default,#d6e3da,1826,1819.0,,True,Condition
+49,Condition,recurrent-bacterial-vaginosis,Recurrent Bacterial Vaginosis,public,Default,#ffdbe1,3331,,,True,Condition
+50,Condition,sibo,Small Intestine Bacterial Overgrowth (SIBO),public,Default,#f3f8d6,2543,,,True,Condition
+51,Condition,binge-eating-disorder,Binge Eating Disorder ,public,Default,#e5deed,3161,,,True,Condition
+52,Condition,anorexia-nervosa-binge-eatingpurge-type,Anorexia Nervosa Binge-Eating/Purging Type,public,Default,#daf0f3,221958,2389.0,,True,Condition
+53,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+54,Condition,bipolar-type-2-disorder,Bipolar Type 2 Disorder,public,Default,#e1efd3,1867,1834.0,,True,Condition
+55,Condition,bipolar-type-1-disorder,Bipolar Type 1 Disorder,public,Default,#e1efd3,3203,1834.0,,True,Condition
+56,Condition,borderline-personality,Borderline Personality Disorder,public,Default,#dff6f7,2728,,,True,Condition
+57,Condition,post-traumatic-stress-disorder-ptsd,Post Traumatic Stress Disorder (PTSD),public,Default,#d6e3da,225196,22419.0,,True,Condition
+58,Condition,schizoaffective-disorder,Schizoaffective Disorder,public,Default,#ebd8dd,2380,,,True,Condition
+59,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+60,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+61,Condition,hypertension,Hypertension,public,Default,#ffe3c9,1881,,,True,Condition
+62,Condition,anemia,Iron Deficiency (Anemia),public,Default,#ebd8dd,1847,,,True,Condition
+63,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+64,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+65,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+66,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+67,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+68,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+69,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+70,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+71,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+72,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+73,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+74,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+75,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+76,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+77,Condition,bronchiectasis,Bronchiectasis,public,Default,#d8e6e8,2640,,,True,Condition
+78,Condition,bulimia-nervosa,Bulimia Nervosa,public,Default,#d6e3da,2591,,,True,Condition
+79,Condition,epilepsy,Epilepsy,public,Default,#dee5ce,1877,,,True,Condition
+80,Condition,bells-palsy,Bell's Palsy,public,Default,#fde5e5,22876,,,True,Condition
+81,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+82,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+83,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+84,Condition,crps,Complex Regional Pain Syndrome,public,Default,#daf0f3,2059,,,True,Condition
+85,Condition,low-back-pain,Low Back Pain,public,Default,#f0d5d5,23027,,,True,Condition
+86,Condition,myalgic-encephalomyelitis,Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS),public,Default,#dee5ce,1952,,,True,Condition
+87,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+88,Condition,chronic-urticaria,Chronic Urticaria,public,Default,#d8e6e8,22387,,,True,Condition
+89,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+90,Condition,chronic-urticaria,Chronic Urticaria,public,Default,#d8e6e8,22387,,,True,Condition
+91,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+92,Condition,reflux,Reflux (GERD),public,Default,#ebd8dd,1890,,,True,Condition
+93,Condition,sinus-problems,Chronic Sinusitis,public,Default,#e5e9f5,2085,,,True,Condition
+94,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+95,Condition,chronic-urticaria,Chronic Urticaria,public,Default,#d8e6e8,22387,,,True,Condition
+96,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+97,Condition,reflux,Reflux (GERD),public,Default,#ebd8dd,1890,,,True,Condition
+98,Condition,sinus-problems,Chronic Sinusitis,public,Default,#e5e9f5,2085,,,True,Condition
+99,Condition,myalgic-encephalomyelitis,Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS),public,Default,#dee5ce,1952,,,True,Condition
+100,Condition,copd,COPD,public,Default,#ffe3c9,1887,,,True,Condition
+101,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+102,Condition,chronic-knee-pain,Chronic Knee Pain,public,Default,#d7deea,23207,,,True,Condition
+103,Condition,crps,Complex Regional Pain Syndrome,public,Default,#daf0f3,2059,,,True,Condition
+104,Condition,pancreatitis,Pancreatitis,public,Default,#f3e4e1,1923,,,True,Condition
+105,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+106,Condition,chronic-urticaria,Chronic Urticaria,public,Default,#d8e6e8,22387,,,True,Condition
+107,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+108,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+109,Condition,celiac,Celiac,public,Default,#f6ecd7,1825,,,True,Condition
+110,Condition,copd,COPD,public,Default,#ffe3c9,1887,,,True,Condition
+111,Condition,heart-failure,Heart Failure,public,Default,#d8e6e8,22995,,,True,Condition
+112,Condition,chronic-constipation,Chronic Constipation,public,Default,#f3e4e1,3569,,,True,Condition
+113,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+114,Condition,long-term-effects-of-covid-19,Long COVID,public,Default,#dff6f7,216480,,,True,Condition
+115,Condition,crohns-disease,Crohn's Disease,public,Default,#ebd8dd,22391,,,True,Condition
+116,Condition,crohns-disease-in-adults,Crohn's Disease in Adults,public,Default,#d6e3da,225170,22391.0,,True,Condition
+117,Condition,crohns-disease-in-teens,Crohn's Disease in Teens,public,Default,#d6e3da,225169,22391.0,,True,Condition
+118,Condition,crohns-disease-in-seniors,Crohn's Disease in Seniors,public,Default,#d6e3da,225171,22391.0,,True,Condition
+119,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+120,Condition,interstitial-cystitis,Interstitial Cystitis,public,Default,#daf0f3,1971,,,True,Condition
+121,Condition,clinical-depression,Clinical Depression,public,Default,#d8e6e8,1831,,,True,Condition
+122,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+123,Condition,clinical-depression-in-adults,Clinical Depression in Adults,public,Default,#dee5ce,225382,1831.0,,True,Condition
+124,Condition,clinical-depression-in-teens,Clinical Depression in Teens,public,Default,#dee5ce,225380,1831.0,,True,Condition
+125,Condition,clinical-depression-in-seniors,Clinical Depression in Seniors,public,Default,#dee5ce,225383,1831.0,,True,Condition
+126,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+127,Condition,atopic-eczema,Atopic Dermatitis / Eczema,public,Default,#e5deed,1899,,,True,Condition
+128,Condition,seborrheic-dermatitis,Seborrheic Dermatitis,public,Default,#dff6f7,22392,,,True,Condition
+129,Condition,perioral-dermatitis,Perioral Dermatitis,public,Default,#d8e6e8,23741,,,True,Condition
+130,Condition,atopic-dermatitis-in-adults,Atopic Dermatitis in Adults,public,Default,#e1efd3,225226,1899.0,,True,Condition
+131,Condition,type-2-diabetes,Type 2 Diabetes,public,Default,#fef4d2,23235,1856.0,,True,Condition
+132,Condition,type-1-diabetes-lada,Type 1 Diabetes Including LADA,public,Default,#f3e4e1,23234,1856.0,,True,Condition
+133,Condition,atopic-eczema,Atopic Dermatitis / Eczema,public,Default,#e5deed,1899,,,True,Condition
+134,Condition,dyshidrotic-eczema,Dyshidrotic Eczema,public,Default,#ffe3c9,3002,,,True,Condition
+135,Condition,diverticulitis,Diverticulitis,public,Default,#f0d5d5,1894,,,True,Condition
+136,Condition,burning-mouth-syndrome,Burning Mouth Syndrome,public,Default,#fde5e5,22528,,,True,Condition
+137,Condition,epstein-barr-virus-ebv,Epstein-Barr Virus (Ebv),public,Default,#e5deed,2548,,,True,Condition
+138,Condition,pregnancy-related-hypothyroidism,Pregnancy-Related Hypothyroidism,public,Default,#d8e6e8,221953,1855.0,,True,Condition
+139,Condition,endometriosis,Endometriosis,public,Default,#e5deed,22381,,,True,Condition
+140,Condition,epilepsy,Epilepsy,public,Default,#dee5ce,1877,,,True,Condition
+141,Condition,male-erectile-dysfunction,Male Erectile Dysfunction,public,Default,#f6ecd7,22836,,,True,Condition
+142,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+143,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+144,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+145,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+146,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+147,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+148,Condition,eye-floaters,Eye Floaters,public,Default,#f3f8d6,23348,,,True,Condition
+149,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+150,Condition,fibroids,Fibroids,public,Default,#dff6f7,1845,,,True,Condition
+151,Condition,fibromyalgia,Fibromyalgia,public,Default,#e1efd3,22386,,,True,Condition
+152,Condition,arfid,Avoidant-Restrictive Food Intake Disorder,public,Default,#f0d5d5,3741,,,True,Condition
+153,Condition,fnd,Functional Neurological Disorder (FND),public,Default,#ffe3c9,2038,,,True,Condition
+154,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+155,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+156,Condition,gallstones,Gallstones,public,Default,#ffe3c9,1961,,,True,Condition
+157,Condition,reflux,Reflux (GERD),public,Default,#ebd8dd,1890,,,True,Condition
+158,Condition,genital-herpes,Herpes Simplex Genitalis,public,Default,#fef4d2,22631,,,True,Condition
+159,Condition,gout,Gout,public,Default,#ffe3c9,1910,,,True,Condition
+160,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+161,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+162,Condition,tension-headache,Tension Headache,public,Default,#ffdbe1,2405,,,True,Condition
+163,Condition,cluster-headache,Cluster Headache,public,Default,#fde5e5,3043,,,True,Condition
+164,Condition,heart-failure,Heart Failure,public,Default,#d8e6e8,22995,,,True,Condition
+165,Condition,ptsd-and-cptsd,PTSD & C-PTSD,public,Default,#d7deea,22419,,,True,Condition
+166,Condition,hernias,Hernias,public,Default,#e1efd3,2099,,,True,Condition
+167,Condition,high-cholesterol,High Cholesterol,public,Default,#d7deea,1830,,,True,Condition
+168,Condition,hypertension,Hypertension,public,Default,#ffe3c9,1881,,,True,Condition
+169,Condition,lymphoedema,Lymphoedema,public,Default,#e5deed,2437,,,True,Condition
+170,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+171,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+172,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+173,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+174,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+175,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+176,Condition,clinical-depression,Clinical Depression,public,Default,#d8e6e8,1831,,,True,Condition
+177,Condition,adhd-adults,ADHD Adults,public,Default,#d6e3da,22959,22379.0,,True,Condition
+178,Condition,hypertension,Hypertension,public,Default,#ffe3c9,1881,,,True,Condition
+179,Condition,hyperhidrosis-excessive-sweating,Hyperhidrosis (Excessive Sweating),public,Default,#f0d5d5,3440,,,True,Condition
+180,Condition,reflux,Reflux (GERD),public,Default,#ebd8dd,1890,,,True,Condition
+181,Condition,heart-failure,Heart Failure,public,Default,#d8e6e8,22995,,,True,Condition
+182,Condition,insomnia,Insomnia,public,Default,#f6ecd7,2039,,,True,Condition
+183,Condition,anemia,Iron Deficiency (Anemia),public,Default,#ebd8dd,1847,,,True,Condition
+184,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+185,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+186,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+187,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+188,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+189,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+190,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+191,Condition,lactose-intolerance,Lactose Intolerance,public,Default,#e1efd3,1943,,,True,Condition
+192,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+193,Condition,lichen-planus,Lichen Planus,public,Default,#f3f8d6,22874,,,True,Condition
+194,Condition,lichen-sclerosus,Lichen Sclerosus,public,Default,#f6ecd7,1965,,,True,Condition
+195,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+196,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+197,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+198,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+199,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+200,Condition,lupus,Lupus (SLE),public,Default,#daeaf5,22383,,,True,Condition
+201,Condition,lyme-disease,Lyme Disease,public,Default,#ffdbe1,1991,,,True,Condition
+202,Condition,chronic-lyme-disease-cld,Chronic Lyme Disease (CLD),public,Default,#f0d5d5,216990,,,True,Condition
+203,Condition,lymphoedema,Lymphoedema,public,Default,#e5deed,2437,,,True,Condition
+204,Condition,asthma,Asthma,public,Default,#daf0f3,1888,,,True,Condition
+205,Condition,menopause,Menopause,public,Default,#d7deea,2124,,,True,Condition
+206,Condition,natural-menopause,Natural Menopause,public,Default,#e1efd3,224309,2124.0,,True,Condition
+207,Condition,medically-induced-menopause,Medically Induced Menopause,public,Default,#e1efd3,224310,2124.0,,True,Condition
+208,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+209,Condition,migraine,Migraine,public,Default,#daf0f3,1878,,,True,Condition
+210,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+211,Condition,burning-mouth-syndrome,Burning Mouth Syndrome,public,Default,#fde5e5,22528,,,True,Condition
+212,Condition,burning-mouth-syndrome,Burning Mouth Syndrome,public,Default,#fde5e5,22528,,,True,Condition
+213,Condition,multiple-sclerosis,Multiple Sclerosis,public,Default,#e5deed,23066,,,True,Condition
+214,Condition,multiple-sclerosis,Multiple Sclerosis,public,Default,#e5deed,23066,,,True,Condition
+215,Condition,secondary-progressive-ms-spms,Secondary-Progressive MS (SPMS),public,Default,#d7deea,221993,23066.0,,True,Condition
+216,Condition,menieres-disease,Meniere's Disease,public,Default,#f3f8d6,22374,,,True,Condition
+217,Condition,myasthenia-gravis,Myasthenia Gravis,public,Default,#d7deea,3105,,,True,Condition
+218,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+219,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+220,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+221,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+222,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+223,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+224,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+225,Condition,epilepsy,Epilepsy,public,Default,#dee5ce,1877,,,True,Condition
+226,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+227,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+228,Condition,thyroiditis-non-hashimotos,Thyroiditis (Non-Hashimoto's),public,Default,#d8e6e8,225149,1855.0,,True,Condition
+229,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+230,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+231,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+232,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+233,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+234,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+235,Condition,overweight-obesity,Overweight & Obesity,public,Default,#daf0f3,2842,,,True,Condition
+236,Condition,asthma,Asthma,public,Default,#daf0f3,1888,,,True,Condition
+237,Condition,ocd,OCD,public,Default,#d6e3da,1823,,,True,Condition
+238,Condition,sleep-apnea,Sleep Apnea,public,Default,#e1efd3,1875,,,True,Condition
+239,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+240,Condition,osteoporosis,Osteoporosis,public,Default,#daeaf5,2121,,,True,Condition
+241,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+242,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+243,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+244,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+245,Condition,hyperthyroidism,Hyperthyroidism,public,Default,#ffdbe1,1854,,,True,Condition
+246,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+247,Condition,panic-disorder,Panic Disorder,public,Default,#d6e3da,2036,,,True,Condition
+248,Condition,parkinsons-disease,Parkinson's Disease,public,Default,#dff6f7,3413,,,True,Condition
+249,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+250,Condition,peripheral-neuropathy,Peripheral Neuropathy,public,Default,#ebd8dd,2312,,,True,Condition
+251,Condition,small-fiber-neuropathy,Small Fiber Neuropathy,public,Default,#d8e6e8,2257,,,True,Condition
+252,Condition,borderline-personality,Borderline Personality Disorder,public,Default,#dff6f7,2728,,,True,Condition
+253,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+254,Condition,polymyalgia-rheumatica,Polymyalgia Rheumatica,public,Default,#ffe3c9,3377,,,True,Condition
+255,Condition,post-traumatic-stress-disorder-ptsd,Post Traumatic Stress Disorder (PTSD),public,Default,#d6e3da,225196,22419.0,,True,Condition
+256,Condition,pots,POTS,public,Default,#e1efd3,5198,,,True,Condition
+257,Condition,complex-post-traumatic-stress-disorder-c-ptsd,Complex Post Traumatic Stress Disorder (C-PTSD),public,Default,#d6e3da,3082,22419.0,,True,Condition
+258,Condition,post-traumatic-stress-disorder-ptsd,Post Traumatic Stress Disorder (PTSD),public,Default,#d6e3da,225196,22419.0,,True,Condition
+259,Condition,complex-post-traumatic-stress-disorder-c-ptsd,Complex Post Traumatic Stress Disorder (C-PTSD),public,Default,#d6e3da,3082,22419.0,,True,Condition
+260,Condition,clinical-depression,Clinical Depression,public,Default,#d8e6e8,1831,,,True,Condition
+261,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+262,Condition,clinical-depression-in-adults,Clinical Depression in Adults,public,Default,#dee5ce,225382,1831.0,,True,Condition
+263,Condition,clinical-depression-in-teens,Clinical Depression in Teens,public,Default,#dee5ce,225380,1831.0,,True,Condition
+264,Condition,clinical-depression-in-seniors,Clinical Depression in Seniors,public,Default,#dee5ce,225383,1831.0,,True,Condition
+265,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+266,Condition,pregnancy-related-hypothyroidism,Pregnancy-Related Hypothyroidism,public,Default,#d8e6e8,221953,1855.0,,True,Condition
+267,Condition,hypertension,Hypertension,public,Default,#ffe3c9,1881,,,True,Condition
+268,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+269,Condition,psoriasis,Psoriasis,public,Default,#f6ecd7,22382,,,True,Condition
+270,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+271,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+272,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+273,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+274,Condition,epilepsy,Epilepsy,public,Default,#dee5ce,1877,,,True,Condition
+275,Condition,raynauds-syndrome,Raynaud's Syndrome,public,Default,#daf0f3,23131,,,True,Condition
+276,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+277,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+278,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+279,Condition,restless-legs-syndrome,Restless Legs Syndrome,public,Default,#fde5e5,2041,,,True,Condition
+280,Condition,asthma-in-children,Asthma in Children,public,Default,#daf0f3,225219,1888.0,,True,Condition
+281,Condition,adhd-children-teens,ADHD Children & Teens,public,Default,#daf0f3,22958,22379.0,,True,Condition
+282,Condition,atopic-dermatitis-in-children,Atopic Dermatitis in Children,public,Default,#e1efd3,225224,1899.0,,True,Condition
+283,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+284,Condition,clinical-depression-in-children,Clinical Depression in Children,public,Default,#dee5ce,225379,1831.0,,True,Condition
+285,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+286,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+287,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+288,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+289,Condition,rosacea,Rosacea,public,Default,#dee5ce,1904,,,True,Condition
+290,Condition,schizophrenia,Schizophrenia,public,Default,#e5e9f5,3576,,,True,Condition
+291,Condition,scoliosis,Scoliosis,public,Default,#f6ecd7,1912,,,True,Condition
+292,Condition,shingles,Shingles,public,Default,#f3e4e1,2160,,,True,Condition
+293,Condition,mcas,MCAS,public,Default,#dee5ce,22375,,,True,Condition
+294,Condition,sinus-problems,Chronic Sinusitis,public,Default,#e5e9f5,2085,,,True,Condition
+295,Condition,sjogrens-syndrome,Sjogren's Syndrome,public,Default,#f3e4e1,1850,,,True,Condition
+296,Condition,mctd,Mixed Connective Tissue Disease (MCTD),public,Default,#dff6f7,2833,,,True,Condition
+297,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+298,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+299,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+300,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+301,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+302,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+303,Condition,tinnitus,Tinnitus,public,Default,#daeaf5,3243,,,True,Condition
+304,Condition,trigeminal-neuralgia,Trigeminal Neuralgia,public,Default,#fef4d2,1950,,,True,Condition
+305,Condition,occipital-neuralgia,Occipital Neuralgia,public,Default,#e1efd3,2770,,,True,Condition
+306,Condition,type-1-diabetes-lada,Type 1 Diabetes Including LADA,public,Default,#f3e4e1,23234,1856.0,,True,Condition
+307,Condition,type-2-diabetes,Type 2 Diabetes,public,Default,#fef4d2,23235,1856.0,,True,Condition
+308,Condition,bipolar-type-1-disorder,Bipolar Type 1 Disorder,public,Default,#e1efd3,3203,1834.0,,True,Condition
+309,Condition,type-2-diabetes,Type 2 Diabetes,public,Default,#fef4d2,23235,1856.0,,True,Condition
+310,Condition,type-1-diabetes-lada,Type 1 Diabetes Including LADA,public,Default,#f3e4e1,23234,1856.0,,True,Condition
+311,Condition,bipolar-type-2-disorder,Bipolar Type 2 Disorder,public,Default,#e1efd3,1867,1834.0,,True,Condition
+312,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+313,Condition,ulcerative-colitis,Ulcerative Colitis,public,Default,#d6e3da,2101,,,True,Condition
+314,Condition,microscopic-colitis,Microscopic Colitis,public,Default,#fde5e5,1892,,,True,Condition
+315,Condition,lymphocytic-colitis,Lymphocytic Colitis,public,Default,#ffdbe1,2892,,,True,Condition
+316,Condition,hypothyroidism,Hypothyroidism,public,Default,#f6ecd7,1855,,,True,Condition
+317,Condition,hypertension,Hypertension,public,Default,#ffe3c9,1881,,,True,Condition
+318,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+319,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+320,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+321,Condition,chronic-urticaria,Chronic Urticaria,public,Default,#d8e6e8,22387,,,True,Condition
+322,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+323,Condition,atopic-eczema,Atopic Dermatitis / Eczema,public,Default,#e5deed,1899,,,True,Condition
+324,Condition,dyshidrotic-eczema,Dyshidrotic Eczema,public,Default,#ffe3c9,3002,,,True,Condition
+325,Condition,vertigo-unspecified,Vertigo (Unspecified),public,Default,#f3f8d6,23142,,,True,Condition
+326,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+327,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+328,Condition,tourette-syndrome,Tourette Syndrome,public,Default,#fde5e5,2397,,,True,Condition
+329,Condition,ocd,OCD,public,Default,#d6e3da,1823,,,True,Condition
+330,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+331,Condition,borderline-personality,Borderline Personality Disorder,public,Default,#dff6f7,2728,,,True,Condition
+332,Condition,autism-spectrum-disorder,Autism Spectrum Disorder,public,Default,#e1efd3,1819,,,True,Condition
+333,Condition,essential-tremor,Essential Tremor,public,Default,#f6ecd7,2246,,,True,Condition
+334,Condition,asthma,Asthma,public,Default,#daf0f3,1888,,,True,Condition
+335,Condition,bronchiectasis,Bronchiectasis,public,Default,#d8e6e8,2640,,,True,Condition
+336,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+337,Condition,borderline-personality,Borderline Personality Disorder,public,Default,#dff6f7,2728,,,True,Condition
+338,Condition,autism-spectrum-disorder,Autism Spectrum Disorder,public,Default,#e1efd3,1819,,,True,Condition
+339,Condition,anemia,Iron Deficiency (Anemia),public,Default,#ebd8dd,1847,,,True,Condition
+340,Condition,parosmia,Parosmia,public,Default,#d7deea,221150,,,True,Condition
+341,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+342,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+343,Condition,celiac,Celiac,public,Default,#f6ecd7,1825,,,True,Condition
+344,Condition,sibo,Small Intestine Bacterial Overgrowth (SIBO),public,Default,#f3f8d6,2543,,,True,Condition
+345,Condition,lactose-intolerance,Lactose Intolerance,public,Default,#e1efd3,1943,,,True,Condition
+346,Condition,epilepsy,Epilepsy,public,Default,#dee5ce,1877,,,True,Condition
+347,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+348,Condition,gastroparesis,Gastroparesis,public,Default,#fef4d2,2091,,,True,Condition
+349,Condition,adrenal-insufficiency,Adrenal Insufficiency,public,Default,#d7deea,2369,,,True,Condition
+350,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+351,Condition,lymphoedema,Lymphoedema,public,Default,#e5deed,2437,,,True,Condition
+352,Condition,lipoedema,Lipoedema,public,Default,#d6e3da,1906,,,True,Condition
+353,Condition,sleep-apnea,Sleep Apnea,public,Default,#e1efd3,1875,,,True,Condition
+354,Condition,lymphoedema,Lymphoedema,public,Default,#e5deed,2437,,,True,Condition
+355,Condition,schizoaffective-disorder,Schizoaffective Disorder,public,Default,#ebd8dd,2380,,,True,Condition
+356,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+357,Condition,borderline-personality,Borderline Personality Disorder,public,Default,#dff6f7,2728,,,True,Condition
+358,Condition,autism-spectrum-disorder,Autism Spectrum Disorder,public,Default,#e1efd3,1819,,,True,Condition
+359,Condition,panic-disorder,Panic Disorder,public,Default,#d6e3da,2036,,,True,Condition
+360,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+361,Condition,borderline-personality,Borderline Personality Disorder,public,Default,#dff6f7,2728,,,True,Condition
+362,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+363,Condition,lichen-planus,Lichen Planus,public,Default,#f3f8d6,22874,,,True,Condition
+364,Condition,lichen-sclerosus,Lichen Sclerosus,public,Default,#f6ecd7,1965,,,True,Condition
+365,Condition,recurrent-bacterial-vaginosis,Recurrent Bacterial Vaginosis,public,Default,#ffdbe1,3331,,,True,Condition
+366,Condition,human-papillomavirus,Human Papillomavirus,public,Default,#ebd8dd,3129,,,True,Condition
+367,Condition,tinnitus,Tinnitus,public,Default,#daeaf5,3243,,,True,Condition
+368,Condition,tmj,Temporomandibular Joint Disorders (TMD),public,Default,#dff6f7,1889,,,True,Condition
+369,Condition,trigeminal-neuralgia,Trigeminal Neuralgia,public,Default,#fef4d2,1950,,,True,Condition
+370,Condition,occipital-neuralgia,Occipital Neuralgia,public,Default,#e1efd3,2770,,,True,Condition
+371,Condition,migraine,Migraine,public,Default,#daf0f3,1878,,,True,Condition
+372,Condition,peripheral-neuropathy,Peripheral Neuropathy,public,Default,#ebd8dd,2312,,,True,Condition
+373,Condition,small-fiber-neuropathy,Small Fiber Neuropathy,public,Default,#d8e6e8,2257,,,True,Condition
+374,Condition,degenerative-disc-disease,Degenerative Disc Disease,public,Default,#f3f8d6,1987,,,True,Condition
+375,Condition,herniated-disc,Herniated Disc,public,Default,#ebd8dd,1922,,,True,Condition
+376,Condition,low-back-pain,Low Back Pain,public,Default,#f0d5d5,23027,,,True,Condition
+377,Condition,scoliosis,Scoliosis,public,Default,#f6ecd7,1912,,,True,Condition
+378,Condition,osteoporosis,Osteoporosis,public,Default,#daeaf5,2121,,,True,Condition
+379,Condition,ankylosing-spondylitis,Ankylosing Spondylitis,public,Default,#daeaf5,1913,,,True,Condition
+380,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+381,Condition,chronic-knee-pain,Chronic Knee Pain,public,Default,#d7deea,23207,,,True,Condition
+382,Condition,crps,Complex Regional Pain Syndrome,public,Default,#daf0f3,2059,,,True,Condition
+383,Condition,insomnia,Insomnia,public,Default,#f6ecd7,2039,,,True,Condition
+384,Condition,hypertension,Hypertension,public,Default,#ffe3c9,1881,,,True,Condition
+385,Condition,intracranial-hypertension,Intracranial Hypertension,public,Default,#d7deea,2258,,,True,Condition
+386,Condition,type-1-diabetes-lada,Type 1 Diabetes Including LADA,public,Default,#f3e4e1,23234,1856.0,,True,Condition
+387,Condition,type-2-diabetes,Type 2 Diabetes,public,Default,#fef4d2,23235,1856.0,,True,Condition
+388,Condition,bipolar-type-1-disorder,Bipolar Type 1 Disorder,public,Default,#e1efd3,3203,1834.0,,True,Condition
+389,Condition,type-1-diabetes-lada,Type 1 Diabetes Including LADA,public,Default,#f3e4e1,23234,1856.0,,True,Condition
+390,Condition,morgellons,Morgellons,public,Default,#e1efd3,23673,,,True,Condition
+391,Condition,perimenopause,Perimenopause,public,Default,#f6ecd7,3361,,,True,Condition
+392,Condition,hidradenitis-suppurativa,Hidradenitis Suppurativa,public,Default,#ffe3c9,22380,,,True,Condition
+393,Condition,macular-degeneration,Macular Degeneration,public,Default,#ebd8dd,3030,,,True,Condition
+394,Condition,raynauds-syndrome,Raynaud's Syndrome,public,Default,#daf0f3,23131,,,True,Condition
+395,Condition,tinnitus,Tinnitus,public,Default,#daeaf5,3243,,,True,Condition
+396,Condition,lymphocytic-colitis,Lymphocytic Colitis,public,Default,#ffdbe1,2892,,,True,Condition
+397,Condition,microscopic-colitis,Microscopic Colitis,public,Default,#fde5e5,1892,,,True,Condition
+398,Condition,ulcerative-colitis,Ulcerative Colitis,public,Default,#d6e3da,2101,,,True,Condition
+399,Condition,crohns-disease,Crohn's Disease,public,Default,#ebd8dd,22391,,,True,Condition
+400,Condition,microscopic-colitis,Microscopic Colitis,public,Default,#fde5e5,1892,,,True,Condition
+401,Condition,ulcerative-colitis,Ulcerative Colitis,public,Default,#d6e3da,2101,,,True,Condition
+402,Condition,lymphocytic-colitis,Lymphocytic Colitis,public,Default,#ffdbe1,2892,,,True,Condition
+403,Condition,dysthymia,Persistent Depressive Disorder (Dysthymia),public,Default,#e5e9f5,1869,,,True,Condition
+404,Condition,mixed-depressive-anxiety,Mixed Depressive and Anxiety Disorder,public,Default,#fef4d2,3280,,,True,Condition
+405,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+406,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+407,Condition,dissociative-identity-disorder,Dissociative Identity Disorder,public,Default,#daf0f3,2388,,,True,Condition
+408,Condition,bipolar-disorder,Bipolar Disorder,public,Default,#d8e6e8,1834,,,True,Condition
+409,Condition,spinal-stenosis,Spinal Stenosis,public,Default,#ffe3c9,2117,,,True,Condition
+410,Condition,degenerative-disc-disease,Degenerative Disc Disease,public,Default,#f3f8d6,1987,,,True,Condition
+411,Condition,atrial-tachyarrhythmias,Atrial Tachyarrhythmias,public,Default,#e5deed,2080,,,True,Condition
+412,Condition,chronic-pain,Chronic Pain,public,Default,#ebd8dd,1974,,,True,Condition
+413,Condition,chronic-knee-pain,Chronic Knee Pain,public,Default,#d7deea,23207,,,True,Condition
+414,Condition,crps,Complex Regional Pain Syndrome,public,Default,#daf0f3,2059,,,True,Condition
+415,Condition,eye-floaters,Eye Floaters,public,Default,#f3f8d6,23348,,,True,Condition
+416,Condition,lichen-planus,Lichen Planus,public,Default,#f3f8d6,22874,,,True,Condition
+417,Condition,lichen-sclerosus,Lichen Sclerosus,public,Default,#f6ecd7,1965,,,True,Condition
+418,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+419,Condition,clinical-depression,Clinical Depression,public,Default,#d8e6e8,1831,,,True,Condition
+420,Condition,clinical-depression-in-young-adults,Clinical Depression in Young Adults,public,Default,#dee5ce,225381,1831.0,,True,Condition
+421,Condition,clinical-depression-in-adults,Clinical Depression in Adults,public,Default,#dee5ce,225382,1831.0,,True,Condition
+422,Condition,pmdd,Premenstrual Dysphoric Disorder,public,Default,#daf0f3,1917,,,True,Condition
+423,Condition,cluster-headache,Cluster Headache,public,Default,#fde5e5,3043,,,True,Condition
+424,Condition,tension-headache,Tension Headache,public,Default,#ffdbe1,2405,,,True,Condition
+425,Condition,new-daily-persistent-headache-ndph,New Daily Persistent Headache (NDPH) ,public,Default,#ffe3c9,23575,,,True,Condition
+426,Condition,tension-headache,Tension Headache,public,Default,#ffdbe1,2405,,,True,Condition
+427,Condition,multiple-sclerosis,Multiple Sclerosis,public,Default,#e5deed,23066,,,True,Condition
+428,Condition,mortons-neuroma,Morton's Neuroma,public,Default,#f6ecd7,22665,,,True,Condition
+429,Condition,menieres-disease,Meniere's Disease,public,Default,#f3f8d6,22374,,,True,Condition
+430,Condition,plantar-fasciitis,Plantar Fasciitis,public,Default,#d7deea,1914,,,True,Condition
+431,Condition,barretts-esophagus,Barrett's Esophagus,public,Default,#f3e4e1,1891,,,True,Condition
+432,Condition,reflux,Reflux (GERD),public,Default,#ebd8dd,1890,,,True,Condition
+433,Condition,laryngopharyngeal-reflux,Laryngopharyngeal Reflux,public,Default,#d6e3da,3000,,,True,Condition
+434,Condition,celiac,Celiac,public,Default,#f6ecd7,1825,,,True,Condition
+435,Condition,crohns-disease,Crohn's Disease,public,Default,#ebd8dd,22391,,,True,Condition
+436,Condition,crohns-disease-in-adults,Crohn's Disease in Adults,public,Default,#d6e3da,225170,22391.0,,True,Condition
+437,Condition,crohns-disease-in-teens,Crohn's Disease in Teens,public,Default,#d6e3da,225169,22391.0,,True,Condition
+438,Condition,crohns-disease-in-seniors,Crohn's Disease in Seniors,public,Default,#d6e3da,225171,22391.0,,True,Condition
+439,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+440,Condition,ulcerative-colitis,Ulcerative Colitis,public,Default,#d6e3da,2101,,,True,Condition
+441,Condition,microscopic-colitis,Microscopic Colitis,public,Default,#fde5e5,1892,,,True,Condition
+442,Condition,lymphocytic-colitis,Lymphocytic Colitis,public,Default,#ffdbe1,2892,,,True,Condition
+443,Condition,diverticulitis,Diverticulitis,public,Default,#f0d5d5,1894,,,True,Condition
+444,Condition,diverticulosis,Diverticulosis,public,Default,#f3f8d6,1895,,,True,Condition
+445,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+446,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+447,Condition,pancreatitis,Pancreatitis,public,Default,#f3e4e1,1923,,,True,Condition
+448,Condition,gallstones,Gallstones,public,Default,#ffe3c9,1961,,,True,Condition
+449,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+450,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+451,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+452,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+453,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+454,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+455,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+456,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+457,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+458,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+459,Condition,male-erectile-dysfunction,Male Erectile Dysfunction,public,Default,#f6ecd7,22836,,,True,Condition
+460,Condition,pcos,PCOS,public,Default,#dee5ce,22385,,,True,Condition
+461,Condition,endometriosis,Endometriosis,public,Default,#e5deed,22381,,,True,Condition
+462,Condition,fibroids,Fibroids,public,Default,#dff6f7,1845,,,True,Condition
+463,Condition,pregnancy-related-hypothyroidism,Pregnancy-Related Hypothyroidism,public,Default,#d8e6e8,221953,1855.0,,True,Condition
+464,Condition,menopause,Menopause,public,Default,#d7deea,2124,,,True,Condition
+465,Condition,tmj,Temporomandibular Joint Disorders (TMD),public,Default,#dff6f7,1889,,,True,Condition
+466,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+467,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+468,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+469,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+470,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+471,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+472,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+473,Condition,gout,Gout,public,Default,#ffe3c9,1910,,,True,Condition
+474,Condition,fibromyalgia,Fibromyalgia,public,Default,#e1efd3,22386,,,True,Condition
+475,Condition,osteoporosis,Osteoporosis,public,Default,#daeaf5,2121,,,True,Condition
+476,Condition,lupus,Lupus (SLE),public,Default,#daeaf5,22383,,,True,Condition
+477,Condition,multiple-sclerosis,Multiple Sclerosis,public,Default,#e5deed,23066,,,True,Condition
+478,Condition,parkinsons-disease,Parkinson's Disease,public,Default,#dff6f7,3413,,,True,Condition
+479,Condition,epilepsy,Epilepsy,public,Default,#dee5ce,1877,,,True,Condition
+480,Condition,migraine,Migraine,public,Default,#daf0f3,1878,,,True,Condition
+481,Condition,cluster-headache,Cluster Headache,public,Default,#fde5e5,3043,,,True,Condition
+482,Condition,fibromyalgia,Fibromyalgia,public,Default,#e1efd3,22386,,,True,Condition
+483,Condition,myalgic-encephalomyelitis,Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS),public,Default,#dee5ce,1952,,,True,Condition
+484,Condition,lyme-disease,Lyme Disease,public,Default,#ffdbe1,1991,,,True,Condition
+485,Condition,chronic-lyme-disease-cld,Chronic Lyme Disease (CLD),public,Default,#f0d5d5,216990,,,True,Condition
+486,Condition,shingles,Shingles,public,Default,#f3e4e1,2160,,,True,Condition
+487,Condition,genital-herpes,Herpes Simplex Genitalis,public,Default,#fef4d2,22631,,,True,Condition
+488,Condition,ptsd-and-cptsd,PTSD & C-PTSD,public,Default,#d7deea,22419,,,True,Condition
+489,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+490,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+491,Condition,pancreatitis,Pancreatitis,public,Default,#f3e4e1,1923,,,True,Condition
+492,Condition,celiac,Celiac,public,Default,#f6ecd7,1825,,,True,Condition
+493,Condition,crohns-disease,Crohn's Disease,public,Default,#ebd8dd,22391,,,True,Condition
+494,Condition,crohns-disease-in-adults,Crohn's Disease in Adults,public,Default,#d6e3da,225170,22391.0,,True,Condition
+495,Condition,crohns-disease-in-teens,Crohn's Disease in Teens,public,Default,#d6e3da,225169,22391.0,,True,Condition
+496,Condition,crohns-disease-in-seniors,Crohn's Disease in Seniors,public,Default,#d6e3da,225171,22391.0,,True,Condition
+497,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+498,Condition,ulcerative-colitis,Ulcerative Colitis,public,Default,#d6e3da,2101,,,True,Condition
+499,Condition,microscopic-colitis,Microscopic Colitis,public,Default,#fde5e5,1892,,,True,Condition
+500,Condition,lymphocytic-colitis,Lymphocytic Colitis,public,Default,#ffdbe1,2892,,,True,Condition
+501,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+502,Condition,diverticulitis,Diverticulitis,public,Default,#f0d5d5,1894,,,True,Condition
+503,Condition,gallstones,Gallstones,public,Default,#ffe3c9,1961,,,True,Condition
+504,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+505,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+506,Condition,pcos,PCOS,public,Default,#dee5ce,22385,,,True,Condition
+507,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+508,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+509,Condition,interstitial-cystitis,Interstitial Cystitis,public,Default,#daf0f3,1971,,,True,Condition
+510,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+511,Condition,male-erectile-dysfunction,Male Erectile Dysfunction,public,Default,#f6ecd7,22836,,,True,Condition
+512,Condition,endometriosis,Endometriosis,public,Default,#e5deed,22381,,,True,Condition
+513,Condition,pcos,PCOS,public,Default,#dee5ce,22385,,,True,Condition
+514,Condition,pmdd,Premenstrual Dysphoric Disorder,public,Default,#daf0f3,1917,,,True,Condition
+515,Condition,fibroids,Fibroids,public,Default,#dff6f7,1845,,,True,Condition
+516,Condition,genital-herpes,Herpes Simplex Genitalis,public,Default,#fef4d2,22631,,,True,Condition
+517,Condition,human-papillomavirus,Human Papillomavirus,public,Default,#ebd8dd,3129,,,True,Condition
+518,Condition,ptsd-and-cptsd,PTSD & C-PTSD,public,Default,#d7deea,22419,,,True,Condition
+519,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+520,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+521,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+522,Condition,nafld,Non-Alcoholic Fatty Liver Disease,public,Default,#ffdbe1,1893,,,True,Condition
+523,Condition,pancreatitis,Pancreatitis,public,Default,#f3e4e1,1923,,,True,Condition
+524,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+525,Condition,celiac,Celiac,public,Default,#f6ecd7,1825,,,True,Condition
+526,Condition,lactose-intolerance,Lactose Intolerance,public,Default,#e1efd3,1943,,,True,Condition
+527,Condition,irritable-bowel-syndrome,Irritable Bowel Syndrome,public,Default,#fef4d2,1898,,,True,Condition
+528,Condition,crohns-disease,Crohn's Disease,public,Default,#ebd8dd,22391,,,True,Condition
+529,Condition,crohns-disease-in-adults,Crohn's Disease in Adults,public,Default,#d6e3da,225170,22391.0,,True,Condition
+530,Condition,crohns-disease-in-teens,Crohn's Disease in Teens,public,Default,#d6e3da,225169,22391.0,,True,Condition
+531,Condition,crohns-disease-in-seniors,Crohn's Disease in Seniors,public,Default,#d6e3da,225171,22391.0,,True,Condition
+532,Condition,crohns-disease-in-children,Crohn's Disease in Children,public,Default,#d6e3da,225168,22391.0,,True,Condition
+533,Condition,ulcerative-colitis,Ulcerative Colitis,public,Default,#d6e3da,2101,,,True,Condition
+534,Condition,microscopic-colitis,Microscopic Colitis,public,Default,#fde5e5,1892,,,True,Condition
+535,Condition,lymphocytic-colitis,Lymphocytic Colitis,public,Default,#ffdbe1,2892,,,True,Condition
+536,Condition,diverticulitis,Diverticulitis,public,Default,#f0d5d5,1894,,,True,Condition
+537,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+538,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+539,Condition,reflux,Reflux (GERD),public,Default,#ebd8dd,1890,,,True,Condition
+540,Condition,laryngopharyngeal-reflux,Laryngopharyngeal Reflux,public,Default,#d6e3da,3000,,,True,Condition
+541,Condition,barretts-esophagus,Barrett's Esophagus,public,Default,#f3e4e1,1891,,,True,Condition
+542,Condition,gallstones,Gallstones,public,Default,#ffe3c9,1961,,,True,Condition
+543,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+544,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+545,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+546,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+547,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+548,Condition,chronic-kidney-disease,Chronic Kidney Disease,public,Default,#daf0f3,2127,,,True,Condition
+549,Condition,heart-failure,Heart Failure,public,Default,#d8e6e8,22995,,,True,Condition
+550,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+551,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+552,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+553,Condition,overactive-bladder,Overactive Bladder,public,Default,#dee5ce,2988,,,True,Condition
+554,Condition,urinary-tract-infection,Urinary Tract Infection,public,Default,#f0d5d5,2308,,,True,Condition
+555,Condition,interstitial-cystitis,Interstitial Cystitis,public,Default,#daf0f3,1971,,,True,Condition
+556,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+557,Condition,male-erectile-dysfunction,Male Erectile Dysfunction,public,Default,#f6ecd7,22836,,,True,Condition
+558,Condition,breast-cancer,Breast Cancer,public,Cancer,#f3f8d6,1997,,,True,Condition
+559,Condition,gout,Gout,public,Default,#ffe3c9,1910,,,True,Condition
+560,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+561,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+562,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition
+563,Condition,psoriatic-arthritis,Psoriatic Arthritis (PSA),public,Default,#d7deea,22384,,,True,Condition
+564,Condition,rheumatoid-arthritis,Rheumatoid Arthritis,public,Default,#e5e9f5,1908,,,True,Condition
+565,Condition,osteoarthritis,Osteoarthritis,public,Default,#f3e4e1,3379,,,True,Condition

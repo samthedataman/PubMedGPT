@@ -9,6 +9,7 @@ PROJECT_NAME = "airflow-test-371320"
 
 
 def run_jobs():
+    
     def join_dataframes_ranking(symptoms_df, triggers_df, comorbidities_df):
         # Pivot the dataframes
         symptoms_df = symptoms_df.pivot(

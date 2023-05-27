@@ -23,7 +23,7 @@ def get_symptoms(condition):
     chrome_options.add_argument("--headless")
 
     driver = webdriver.Chrome(
-        "/Users/samsavage/Downloads/chromedriver_mac_arm64/chromedriver",
+        "/Users/samsavage/Downloads/chromedriver_mac_arm64 (1)/chromedriver",
         options=chrome_options,
     )
 
@@ -123,205 +123,11 @@ def get_symptoms(condition):
     return df
 
 
-def get_conditions():
-    # Instantiate a client object using credentials
-    project_name = "airflow-test-371320"
-
-    key_path = "/Users/samsavage/NHIB Scraper/airflow-test-371320-dad1bdc01d6f.json"
-
-    creds = Credentials.from_service_account_file(key_path)
-
-    client = bigquery.Client(credentials=creds, project=project_name)
-
-    query = f"""with all_conditions as (
-                                    SELECT DISTINCT conditions
-                                    FROM `airflow-test-371320.BACKFILL.STUFF_THAT_WORKS_TRIGGERS`
-                                    UNION DISTINCT
-                                    SELECT DISTINCT conditions
-                                    FROM `airflow-test-371320.BACKFILL.STUFF_THAT_WORKS_SYMPTOMS`
-                                    UNION DISTINCT
-                                    SELECT DISTINCT conditions
-                                    FROM `airflow-test-371320.BACKFILL.STUFF_THAT_WORKS_TREATMENTS`
-                                    UNION DISTINCT
-                                    SELECT DISTINCT conditions
-                                    FROM `airflow-test-371320.BACKFILL.STUFF_THAT_WORKS_COMORBIDITIES`)
-                                    Select conditions from all_conditions"""
-
-    query_job = client.query(query)
-
-    results = query_job.result().to_dataframe()
-    sql_conditions = results["conditions"].to_list()
-    results = sql_conditions + [
-        "Addison's disease",
-        "Atherosclerosis",
-        "Barrett's esophagus",
-        "Benign prostatic hyperplasia (BPH)",
-        "Bruxism",
-        "Cardiomyopathy",
-        "Carpal tunnel syndrome",
-        "Charcot-Marie-Tooth disease",
-        "Chronic bronchitis",
-        "Chronic fatigue syndrome (CFS)",
-        "Chronic obstructive pulmonary disease (COPD)",
-        "Chronic sinusitis",
-        "Congestive heart failure",
-        "Cystic fibrosis",
-        "Emphysema",
-        "Endometriosis",
-        "Essential tremor",
-        "Fatty liver disease",
-        "Gastroesophageal reflux disease (GERD)",
-        "Graves disease",
-        "Hypertension (high blood pressure)",
-        "Hyperthyroidism",
-        "Hypothyroidism",
-        "Inflammatory bowel disease (IBD)",
-        "Insomnia",
-        "Interstitial cystitis",
-        "Irritable bowel syndrome (IBS)",
-        "Kidney stones",
-        "Ménière's disease",
-        "Multiple system atrophy (MSA)",
-        "Myasthenia gravis",
-        "Narcolepsy",
-        "Obstructive sleep apnea",
-        "Osteoarthritis",
-        "Paget's disease of bone",
-        "Parkinson's disease",
-        "Pelvic inflammatory disease (PID)",
-        "Peripheral neuropathy",
-        "Peyronie's disease",
-        "Pityriasis rosea",
-        "Polycystic ovary syndrome (PCOS)",
-        "Postural orthostatic tachycardia syndrome (POTS)",
-        "Primary biliary cirrhosis (PBC)",
-        "Primary sclerosing cholangitis (PSC)",
-        "Pulmonary fibrosis",
-        "Raynaud's phenomenon",
-        "Restless legs syndrome (RLS)",
-        "Rheumatic fever",
-        "Sarcoidosis",
-        "Sjögren's syndrome",
-        "Sleep apnea",
-        "Spondyloarthritis",
-        "Tinnitus",
-        "Trigeminal neuralgia",
-        "Ulcerative colitis",
-        "Urinary incontinence",
-        "Varicose veins",
-        "Vitiligo",
-        "Achalasia",
-        "Acromegaly",
-        "Adrenoleukodystrophy",
-        "Agoraphobia",
-        "Alopecia areata",
-        "Amyloidosis",
-        "Ankylosing spondylitis",
-        "Aortic aneurysm",
-        "Aplastic anemia",
-        "Arnold-Chiari malformation",
-        "Atrial fibrillation",
-        "Avascular necrosis",
-        "Behçet's disease",
-        "Bile duct cancer",
-        "Bladder cancer",
-        "Blepharitis",
-        "Buerger's disease",
-        "Bullous pemphigoid",
-        "Cachexia",
-        "Cardiac arrhythmia",
-        "Celiac disease",
-        "Chagas disease",
-        "Charcot foot",
-        "Cholangitis",
-        "Cholestasis",
-        "Chondromalacia patellae",
-        "Chronic granulomatous disease",
-        "Chronic lymphocytic leukemia",
-        "Chronic myelogenous leukemia",
-        "Chronic pancreatitis",
-        "Chronic venous insufficiency",
-        "Colitis",
-        "Complex regional pain syndrome (CRPS)",
-        "Cystinuria",
-        "Dercum's disease",
-        "Dermatitis herpetiformis",
-        "Diabetic neuropathy",
-        "Diffuse idiopathic skeletal hyperostosis (DISH)",
-        "Diverticulosis",
-        "Dry eye syndrome",
-        "Dupuytren's contracture",
-        "Dysautonomia",
-        "Eczema",
-        "Ehlers-Danlos syndrome",
-        "Endometrial cancer",
-        "Eosinophilic esophagitis",
-        "Epidermolysis bullosa",
-        "Erythema multiforme",
-        "Essential thrombocythemia",
-        "Familial hypercholesterolemia",
-        "Fanconi anemia",
-        "Felty syndrome",
-        "Focal segmental glomerulosclerosis",
-        "Friedreich's ataxia",
-        "Gaucher disease",
-        "Giant cell arteritis",
-        "Granulomatosis with polyangiitis",
-        "Hemochromatosis",
-        "Hereditary angioedema",
-        "Hereditary hemorrhagic telangiectasia",
-        "Hidradenitis suppurativa",
-        "Horner's syndrome",
-        "Huntington's disease",
-        "Hydrocephalus",
-        "Hydronephrosis",
-        "Hyperparathyroidism",
-        "Hypertrophic cardiomyopathy",
-        "Hypoparathyroidism",
-        "Idiopathic intracranial hypertension",
-        "Idiopathic pulmonary fibrosis",
-        "Inclusion body myositis",
-        "Interstitial cystitis",
-        "Kawasaki disease",
-        "Klinefelter syndrome",
-        "Lichen planus",
-        "Lichen sclerosus",
-        "Lymphedema",
-        "Malignant hyperthermia",
-        "Mastocytosis",
-        "Ménière's disease",
-        "Mitral valve prolapse",
-        "Moyamoya disease",
-        "Multiple endocrine neoplasia",
-        "Myelodysplastic syndromes",
-        "Myelofibrosis",
-        "Myositis",
-        "Nail patella syndrome",
-        "Nephrotic syndrome",
-        "Neurofibromatosis",
-        "Neutropenia",
-        "Non-alcoholic fatty liver disease (NAFLD)",
-        "Osteogenesis imperfecta",
-        "Pemphigus",
-    ]
-
-    # Extract the PMIDs from the results
-    return results
-
-
-def read_text_file():
-    with open("/Users/samsavage/NHIB Scraper/list_chronic_conditions.txt", "r") as file:
-        # Read the lines of the file into a list, stripping any newline characters
-        read_list = [line.strip() for line in file]
-        read_list = list(set(read_list))
-    return read_list
-
-
 def insert_dataframe_into_table(df):
     # Instantiate a client object using credentials
     project_name = "airflow-test-371320"
     dataset_name = "DEV"
-    table_id = f"{dataset_name}.STUFF_THAT_WORKS_SYMPTOMS_DEV"
+    table_id = f"{dataset_name}.STUFF_THAT_WORKS_SYMPTOMS_DEV_FULL"
     key_path = "/Users/samsavage/NHIB Scraper/airflow-test-371320-dad1bdc01d6f.json"
     creds = Credentials.from_service_account_file(key_path)
     client = bigquery.Client(credentials=creds, project=project_name)
@@ -337,11 +143,14 @@ def insert_dataframe_into_table(df):
 
 
 def push_treatment_data_to_gbq():
-    results = get_conditions()
+    df = pd.read_csv("/Users/samsavage/PythonProjects/PubMedGPT/full_frame.csv")
 
-    results = list(set(results))
+    print(df.head().T)
+
+    results = df["urlId"].unique()
 
     print(f"We are scraping for:{len(results)} conditions")
+    not_exist_list = []
 
     for condition in results:
         try:
@@ -357,6 +166,12 @@ def push_treatment_data_to_gbq():
                 )
             else:
                 print(f"frame is empty for {condition}")
+
+                not_exist_list.append(condition)
+
+                with open("exclusion_file.txt") as f:
+                    f.write(not_exist_list)
+
             print(f"finish with {condition}!!!")
         except Exception as e:
             print(f"{condition} was {e} not valid moving on")
