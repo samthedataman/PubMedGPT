@@ -2,3 +2,4 @@ gpt4all/
 .vscode/
 data/
 .venv
+.DS_Store
