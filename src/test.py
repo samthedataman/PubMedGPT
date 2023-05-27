@@ -3,15 +3,17 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Instantiate model and tokenizer
 tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neox-20b")
-base_model = AutoModelForCausalLM.from_pretrained("mosaicml/mpt-7b-instruct",
-                                                        offload_folder="model/",
-                                                        trust_remote_code=True,
-                                                        device_map=None)
+base_model = AutoModelForCausalLM.from_pretrained(
+    "mosaicml/mpt-7b-instruct",
+    offload_folder="model/",
+    trust_remote_code=True,
+    device_map=None,
+)
 # Ask a question
 question = "What is a quoll?"
 
 # Encode the question and generate a response
-input_ids = tokenizer.encode(question, return_tensors='pt')
+input_ids = tokenizer.encode(question, return_tensors="pt")
 
 generated_ids = base_model.generate(input_ids)
 
@@ -19,7 +21,6 @@ generated_ids = base_model.generate(input_ids)
 answer = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
 
 print(answer)
-
 
 
 #   'mosaicml/mpt-7b-instruct',

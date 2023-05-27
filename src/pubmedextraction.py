@@ -43,7 +43,6 @@ def extract_text(regexer):
 
 
 def extract_date(regexer):
-
     if regexer:
         year_text = str(regexer.group(1))
         month_text = str(regexer.group(2))
@@ -179,7 +178,6 @@ def get_unique_pmids():
 
 
 def upload_to_bq(df):
-
     project_name = "airflow-test-371320"
     dataset_name = "BACKFILL"
     table_id = f"{dataset_name}.BACKFILL_2023_Clinical_Trials_vm"
@@ -198,8 +196,9 @@ def upload_to_bq(df):
 
 
 if __name__ == "__main__":
-
-    with open("/Users/samsavage/PythonProjects/PubMedGPT/data/chronic_conditions.json", "r") as f:
+    with open(
+        "/Users/samsavage/PythonProjects/PubMedGPT/data/chronic_conditions.json", "r"
+    ) as f:
         chronic_conditions = json.load(f)
 
     import datetime
@@ -239,7 +238,6 @@ if __name__ == "__main__":
         # for category in chronic conditions dict
 
         for i in chronic_conditions[category]:
-
             print(category, "__", i)
 
             category = category
@@ -267,23 +265,19 @@ if __name__ == "__main__":
             print(f"the numnber of pmid for condition {i} in {category}")
 
             if pmids is not None:
-
                 print(i, " is not null \n")
                 condition_count = len(np.unique(pmids))
                 condtion_counter = 0
 
                 for pmid in np.unique(pmids):
-
                     # for for pmid in condtions
 
                     print(pmid, "__", i)
 
                     if pmids is not None:
-
                         # print(f"getting information for {i}, for {category}")
 
                         try:
-
                             (
                                 abstract_texts,
                                 xml_data,
@@ -332,7 +326,6 @@ if __name__ == "__main__":
                             AUTHOR_list.append(AUTHOR_FULL_NAME)
                             DATE_PUBLISHED_list.append(DATE_PUBLISHED)
                         except (ElementTree.ParseError, TypeError) as error:
-
                             continue
 
                         # print("lists have been zipped")

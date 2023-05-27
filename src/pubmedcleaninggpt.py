@@ -2,8 +2,9 @@ from dotenv import load_dotenv
 from gpt4all import GPT4All
 import json
 from datetime import datetime
+
 load_dotenv()
-import pandas as pd 
+import pandas as pd
 from google.cloud import bigquery
 from google.oauth2.service_account import Credentials
 import openai
@@ -11,28 +12,30 @@ import pandas_gbq
 import scholarly
 
 
-with open('/Users/samsavage/PythonProjects/PubMedGPT/data/openaikeys.json') as f:
+with open("/Users/samsavage/PythonProjects/PubMedGPT/data/openaikeys.json") as f:
     keys = json.load(f)
 
 openai_api_key = keys["OPENAI_API_KEY"]
 
+
 def get_total_citation_count(doi_str):
     # Split the DOIs using the delimiter
-    
-   if doi_str is not None:
-    doi_list = doi_str.split("++")
-    print(doi_list)
 
-    # Get the citation count for each DOI and add them up
-    total_citation_count = 0
-    for doi in doi_list:
-        try:
-            pub = next(scholarly.search_pubs_query(doi))
-            total_citation_count += pub.citedby
-        except:
-            pass
-    
-    return total_citation_count
+    if doi_str is not None:
+        doi_list = doi_str.split("++")
+        print(doi_list)
+
+        # Get the citation count for each DOI and add them up
+        total_citation_count = 0
+        for doi in doi_list:
+            try:
+                pub = next(scholarly.search_pubs_query(doi))
+                total_citation_count += pub.citedby
+            except:
+                pass
+
+        return total_citation_count
+
 
 max_tokens = 2153
 
@@ -64,8 +67,8 @@ def insert_dataframe_into_table(df):
         chunksize=None,
     )
 
-def get_clean_data():
 
+def get_clean_data():
     # Instantiate a client object using credentials
     project_name = "airflow-test-371320"
     key_path = "/Users/samsavage/PythonProjects/PubMedGPT/data/gcp_creds.json"
@@ -139,7 +142,7 @@ def summarize_text(text, condition):
     truncated_text = text[:prompt_limit]
 
     conditon = condition
-    
+
     prompt = f"""Tell me the conclusion from this PubMed Paper on this {condition}: \n{truncated_text}\n\n"""
     # print(prompt[:200])
     max_tokens = prompt_and_response_max_tokens - len(truncated_text)
@@ -158,7 +161,6 @@ def summarize_text(text, condition):
 
 
 def go():
-
     df = get_clean_data()
 
     # df["f0_"] = df["DOI"].apply(get_total_citation_count)
@@ -171,7 +173,6 @@ def go():
     counter = 0
 
     for i in range(0, length_of_df, 20):
-
         chunk = df.loc[i : i + 20, :]
 
         uniques_pmids = [pmid for pmid in chunk]
@@ -197,17 +198,21 @@ def go():
         chunk["GPT3_SUMMARY"] = text_list
         chunk["GPT3_PROMPT"] = prompt_list
         chunk["date_"] = chunk["date_"].astype("string")
-        chunk["date_uploaded"] = pd.to_datetime(datetime.now().strftime('%Y-%m-%d'))
-        chunk["date_uploaded_new"] = pd.to_datetime(datetime.now().strftime('%Y-%m-%d'))
+        chunk["date_uploaded"] = pd.to_datetime(datetime.now().strftime("%Y-%m-%d"))
+        chunk["date_uploaded_new"] = pd.to_datetime(datetime.now().strftime("%Y-%m-%d"))
 
-        chunk =  chunk[["date_",				
-                        "ChronicCondition",			
-                        "raw_text",			
-                        "PMID",		
-                        "GPT3_SUMMARY",			
-                        "GPT3_PROMPT",
-                        "date_uploaded",
-                        "date_uploaded_new"]]
+        chunk = chunk[
+            [
+                "date_",
+                "ChronicCondition",
+                "raw_text",
+                "PMID",
+                "GPT3_SUMMARY",
+                "GPT3_PROMPT",
+                "date_uploaded",
+                "date_uploaded_new",
+            ]
+        ]
         insert_dataframe_into_table(chunk)
         print("chunk inserted")
 

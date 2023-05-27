@@ -9,7 +9,10 @@ PROJECT_NAME = "airflow-test-371320"
 
 
 def run_jobs():
+<<<<<<< HEAD
     
+=======
+>>>>>>> 587c87eb2db91b567f4df77aa2f2eb95a55e38d0
     def join_dataframes_ranking(symptoms_df, triggers_df, comorbidities_df):
         # Pivot the dataframes
         symptoms_df = symptoms_df.pivot(
@@ -44,7 +47,10 @@ def run_jobs():
 
     def run_bigquery_query(query, key_path, project_name):
         # Instantiate a client object using credentials
+<<<<<<< HEAD
         key_path = "/Users/samsavage/PythonProjects/PubMedGPT/data/gcp_creds.json"
+=======
+>>>>>>> 587c87eb2db91b567f4df77aa2f2eb95a55e38d0
         creds = Credentials.from_service_account_file(key_path)
         client = bigquery.Client(credentials=creds, project=project_name)
         # Execute the query and return the results as a DataFrame
@@ -108,6 +114,7 @@ def run_jobs():
     ) ranked_data
     WHERE rank = 1
         """,
+<<<<<<< HEAD
         "treatments": """
         SELECT *
     FROM (
@@ -127,6 +134,8 @@ def run_jobs():
     ) ranked_data
     WHERE rank = 1
         """,
+=======
+>>>>>>> 587c87eb2db91b567f4df77aa2f2eb95a55e38d0
     }
 
     dfs = []
@@ -143,6 +152,7 @@ def run_jobs():
     comorbidities_df = dfs[2].copy()
     treatments_df = dfs[3].copy()
 
+<<<<<<< HEAD
     # joined_df = join_dataframes_ranking(symptoms_df, triggers_df, comorbidities_df)
 
     # joined_df_normal = join_dataframes_ranking(symptoms_df, triggers_df, comorbidities_df).astype('int')
@@ -153,3 +163,22 @@ def run_jobs():
     # df_binary = joined_df_normal.where(~mask, 1)
 
     return symptoms_df, triggers_df, comorbidities_df, treatments_df
+=======
+    joined_df = join_dataframes_ranking(symptoms_df, triggers_df, comorbidities_df)
+
+    joined_df_normal = join_dataframes_ranking(
+        symptoms_df, triggers_df, comorbidities_df
+    ).astype("int")
+
+    mask = joined_df_normal > 0
+
+    # Apply the mask to the DataFrame to replace positive numbers with 1
+    df_binary = joined_df_normal.where(~mask, 1)
+
+    return joined_df, df_binary
+
+
+joined_df, binary_df = run_jobs()
+
+binary_df.to_csv("bigmatrix.csv")
+>>>>>>> 587c87eb2db91b567f4df77aa2f2eb95a55e38d0

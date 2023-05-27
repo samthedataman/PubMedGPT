@@ -20,8 +20,11 @@ from conditionslist import diseaseslist
 
 
 def get_treatments(condition):
+<<<<<<< HEAD
     print(condition)
     
+=======
+>>>>>>> 587c87eb2db91b567f4df77aa2f2eb95a55e38d0
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
@@ -155,9 +158,13 @@ def insert_dataframe_into_table(df):
 
 
 def push_treatment_data_to_gbq():
+<<<<<<< HEAD
     df = pd.read_csv("/Users/samsavage/PythonProjects/PubMedGPT/full_frame.csv")
 
     print(df.head().T)
+=======
+    results = get_conditions()
+>>>>>>> 587c87eb2db91b567f4df77aa2f2eb95a55e38d0
 
     results = df["urlId"].unique()
 
